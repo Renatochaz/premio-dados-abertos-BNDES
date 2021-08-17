@@ -119,3 +119,31 @@ def search_info(df, colGen, value, uf, ano):
             ano(str): Ano to search
     '''
     return df.loc[(df[colGen] == value) & (df['uf'] == uf) & (df['ano'] == ano)]
+
+
+def dynamic_group(df, vars, dict):
+    '''
+    Return a dataset grouped with custom rules.
+
+    Args:
+        df(pd.DataFrame): A dataset
+        vars(list): A list containing variables to be grouped
+        dict(dictionary): A dict containing variable:rule set
+    '''
+    groupDF = df.groupby(vars, as_index=False).agg(dict)
+    groupDF.columns = list(map(''.join, groupDF.columns.values))
+    return(groupDF)
+
+
+def self_scatter(df, var, subvar):
+    '''
+    Returns an adjusted scatterplot.
+
+    args:
+        df(DataFrame): A dataset
+        var(str): Name of the main variable
+        subvar(str): Name of the second variable
+    '''
+
+    data = pd.concat([df[var], df[subvar]], axis=1)
+    data.plot.scatter(x=subvar, y=var)
