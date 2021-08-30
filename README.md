@@ -6,8 +6,6 @@
 
 ### Time 8
 
-![](\img\sl_dock.png)
-
 **Msc. Renato Martins Chavez** - https://www.linkedin.com/in/renato-chavez/
 
 PhD. Isotilia Costa Melo - https://www.linkedin.com/in/isotilia-costa-melo-phd-49657211/
