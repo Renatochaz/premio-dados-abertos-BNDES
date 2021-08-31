@@ -46,8 +46,12 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
 - Análise exploratória e aplicação de Machine Learning nos dos dados de financiamentos não automáticos em relação a sustentabilidade, economia e qualidade das empresas contratantes. 
   - Códigos disponíveis em:
     - EDA.ipynb
+    
     - EDA2.ipynb
+    
     - Cluster-analysis.ipynb
+    
+      ![](img/clusters_adjusted.png)
 
 
 
