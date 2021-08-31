@@ -1,6 +1,6 @@
 # Análise Exploratória e Machine Learning nos Dados abertos do BNDES
 
-*Em caso de uso, favor citar: Chavez, R. M. Análise Exploratória e Machine Learning nos Dados abertos do BNDES. Prêmio Dados Abertos para o Desenvolvimento. (2021)*
+*Em caso de uso, favor citar: Chavez, R. M. Melo, I. C. Análise Exploratória e Machine Learning nos Dados abertos do BNDES. Prêmio Dados Abertos para o Desenvolvimento. (2021)*
 
 *https://www.linkedin.com/in/renato-chavez/*
 
@@ -16,7 +16,25 @@
 
 # 1. Introdução
 
+Este trabalho se concentrou em entender a real destinação dos financiamentos empresariais do BNDES e seus impactos na sustentabilidade,considerando pilares econômicos, sociais e ambientais. 
 
+Para tal, foram utilizadas as bases de dados de operações de financiamento não automáticos e os automáticos indiretos do BNDES. Também foram agregadas outras seis bases de dados públicas para aprofundar a investigação. O tratamento dos dados dessas bases é detalhadamente explicado na Seção 2 deste relatório. A bases utilizadas foram: 
+
+(i)             Sistema de Estimativas de missões e Remoções de Gases de Efeito Estufa (SEEG), para investigar os impactos nas emissões,considerando níveis estaduais e setoriais;
+
+(ii)           Cadastro Geral de Empregados e Desempregados(CAGED), para investigar os impactos nos empregos;
+
+(iii)          Atlas do Desenvolvimento Humano no Brasil, para investigar os impactos nos IDH em diversos níveis;
+
+(iv)          Instituto de Pesquisa Econômica Aplicada (IPEA),para investigar os impactos no PIB em diversos níveis e fazer correções financeiras;
+
+(v)           Receita Federal, para entender a estrutura societária das empresas financiadas;
+
+(vi)          JusBrasil, para levantamento do número de processos judiciais das empresas financiadas.
+
+Para atingir o objetivo proposto, considerou-se fundamental priorizar a transparência e o compartilhamento das informações com a sociedade em geral. Para isso, a investigação partiu dos ajustes e considerações para ajustar os dados (Seção 2) e se aprofundou em métodos de análise quantitativos avançados, isto é,  Data Envelopment Analysis (Seção 3) e Machine Learning (Seção 4).
+
+Os resultados (discutidos ao longo das seções e brevemente sumarizados na Seção 5) proporcionaram insights surpreendentes sobre como tornar os financiamentos empresariais do BNDES ainda mais fortes na promoção do desenvolvimento sustentável e impactar positivamente a vida de um maior número de pessoas.
 
 # 2. Bases de dados
 
@@ -270,7 +288,6 @@ Também estamos interessados em observar as correlações para a quantidade de p
 
     **Esse não parece ser o caso, então será possível que o BNDES capta que estas empresas por terem maior quantidade de processos, tem maior risco e consequentemente menor estímulo ao financiamento? Esse é um ponto importante que será analisado nas próximas seções.**
 
-    
 
 ## 3.2 Eixo Sustentabilidade: Financiamentos do BNDES e as emissões de CO2
 
@@ -669,7 +686,6 @@ Nesta sub-seção serão apresentadas algumas das diferenças de característica
 
   - ![](./img/med_fin.jpg)
 
-    
 
 Observa-se que o financiamento médio do grupo 0 é 5 vezes maior do que do grupo 1, e mais de 30 vezes a média do grupo 2.
 
@@ -681,7 +697,6 @@ Isto indica que temos um grupo de empresas que fazem financiamentos gigantescos,
 
   - ![](./img/med_procs.jpg)
 
-    
 
   A média do grupo 0 é muito maior que a dos outros grupos, é particularmente notável a diferença entre o grupo 0 e grupo 1.
 
@@ -693,7 +708,6 @@ Isto indica que temos um grupo de empresas que fazem financiamentos gigantescos,
 
   - ![](./img/med_amort.jpg)
 
-  
 
   A média do prazo de amortização para o grupo 1 é a maior, enquanto a pro grupo 0 é próxima a média do grupo 2.
 
@@ -744,13 +758,18 @@ Já as empresas do cluster 1 parecem tender mais a usar o real/pessoal como gara
 
 # 5. Conclusões
 
-- **Nota-se que existe um incentivo de custo de oportunidade para empresas que conseguem financiar maiores valores, indicando um incentivo a grandes empresas financiarem.**
-- **Talvez uma estratégia que possa ser adotada por futuros trabalhos é a de juntar as bases de financiamentos automáticos e não automáticos, filtrar para os anos de 2010, 2016 e 2017 com o pib e IDH, e procurar entender melhor a relação do financiamento com a evolução do IDH**
-- **Parece haver uma tendência de que maiores valores de financiamento do produto BNDES FINEM estão associados a um menor nível de emissão de CO2, parece que o produto BNDES FINEM tem um bom direcionamento para objetivos sustentáveis, essa é uma relação que pode ser estudada com maior detalhamento em trabalhos futuros.**
-- **A indústria do MG parece ser um local que o BNDES poderia direcionar incentivos do produto FINEM, visto que é o maior emissor do país e vem requisitando poucos incentivos ao longo dos últimos anos.**
-- **No estado de São Paulo observou-se um grande volume de financiamento do BNDES, que veio diminuindo ao mesmo tempo que as emissões de CO2 do estado também diminuíram. Parece haver a possibilidade de que os financiamentos do BNDES contribuíram para este efeito, e este é um ponto que vale a pena um estudo mais profundo de inferência de causalidade.**
-- **Aparentemente a diminuição da emissão de CO2 não diminui o PIB da indústria, indicando que  e este é um ponto importante para o BNDES levantar ao incentivar as indústrias de outros estados a diminuírem seus níveis de emissão**
-- **A agropecuária de MT, PA e RO são os maiores responsáveis por emissão de CO2 de todo o país, e quase não há financiamento para os mesmos. É importantíssimo que o BNDES consiga direcionar o produto BNDES FINEM para a agropecuária destes estados .**
-- **Parece que o setor agropecuário de Minas Gerais apresenta uma boa oportunidade de incentivo, que ainda é pouco explorado.**
-- **Existe um grupo de clientes que faz super financiamentos, mas este grupo tem uma grande média de processos e podem representar empresas de risco ou que não devolvem tanta qualidade para a sociedade. O BNDES parece ser capaz de captar este risco, pois este grupo de financiamentos tem um baixo prazo de amortização. Talvez seja interessante o BNDES analisar a situação jurídica das empresas e observar este ponto também para formar sua proposta de financiamento**
-- **Existe um grupo de clientes que faz financiamentos altos, com média de 110 milhões, e este grupo de cliente tem uma média baixíssima de processos. O BNDES parece ser capaz de identificar esta característica e oferece boas condições de prazo para estes clientes. Pode ser uma oportunidade fazer um trabalho mais profundo para observar quem são estes clientes, e direcionar financiamentos para os mesmos. No trabalho atual, conseguimos identificar que estes clientes estão mais concetrados no setor da infraestrutura, no estado de BA, RN e RS**
+Várias conclusões com impactos para sociedade e para as políticas públicas podem ser derivadas dos resultados aqui apresentados. 
+
+Por exemplo, nota-se que existe um incentivo de custo de oportunidade para empresas que conseguem financiar maiores valores, indicando um incentivo a grandes empresas se financiarem. É necessário considerar a possibilidade de se investigar o caso das pequenas e médias empresas, uma vez que elas representam 70% dos postos de trabalho da América Latina e serão mais impactadas pela transformação digital. Informação disponível em: <https://www.oecd-ilibrary.org/development/latin-american-economic-outlook-2020_e6e864fb-en#:~:text=>
+
+Também existe um grupo de clientes que faz super financiamentos,mas este grupo tem uma grande média de processos e podem representar empresas de risco ou que não impactam em desenvolvimento sustentável (social e ambientalmente). O BNDES parece ser capaz de captar este risco, pois este grup ode financiamentos tem um baixo prazo de amortização. Talvez seja interessante que o BNDES analise a situação jurídica das empresas e observar este ponto também para formar sua proposta de financiamento.
+
+Um terceiro ponto, é que existe um grupo de clientes que faz financiamentos altos, com média de 110 milhões, que tem uma média de processos judiciais baixíssima (21). O BNDES parece ser capaz de identificar esta característica e oferece boas condições de prazo para estes clientes. Pode ser uma oportunidade fazer um trabalho mais profundo para observar quem são estes clientes, e direcionar financiamentos para eles e promover que as boas práticas destes sejam adotadas pelos demais. No trabalho atual, conseguimos identificar que estes clientes estão mais concentrados no setor da infraestrutura, no estado de Bahia, Rio Grande do Norte e Rio Grande do Sul. 
+
+Especificamente para o produto BNDES FINEM, parece haver uma tendência de que maiores valores de financiamento estão associados a um menor nível de emissão de CO2. A indústria do MG parece ser um local que o BNDES poderia direcionar incentivos do produto FINEM, visto que é o maior emissor do país e vem requisitando poucos incentivos ao longo dos últimos anos. Além disso, a diminuição da emissão de CO2 não se correlacionaram com a diminuição do PIB da indústria, indicando que este é um ponto importante para o BNDES apontar para os seus clientes, ao incentivar as indústrias a diminuírem seus níveis de emissão. 
+
+A agropecuária de Mato Grosso, Pará e Rondônia são os maiores responsáveis por emissão de CO2 de todo o país, e quase não há financiamento para os mesmos. É importantíssimo que o BNDES consiga direcionar o produto BNDES FINEM para a agropecuária destes estados. Também parece que o setor agropecuário de Minas Gerais apresenta uma boa oportunidade de incentivo, que ainda é pouco explorado. Consequentemente, parece que o produto BNDES FINEM tem um bom direcionamento para objetivos sustentáveis. Essa é uma relação que pode ser estudada com maior detalhamento em trabalhos futuros. 
+
+Além disso, no estado de São Paulo, também se observou um grande volume de financiamento do BNDES (como um todo, não apenas FINEM) que diminuíram ao mesmo tempo que as emissões de CO2 do estado também diminuíram. É possível imaginar que os grandes aportes iniciais do BNDES contribuíram para a posterior redução de emissões. Dessa forma, parece haver a possibilidade de que os financiamentos do BNDES contribuíram para este efeito, e este é um ponto que vale a pena um estudo mais profundo de inferência de causalidade.
+
+Finalmente, sugerimos para trabalhos futuros, juntar as bases de financiamentos automáticos e não automáticos para entender melhor a relação do financiamento com a evolução do IDH.
