@@ -20,6 +20,8 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
 
 ### Produtos desenvolvidos
 
+- Site com o compilado das solucoes: http://rondon.me//team8/
+
 - Códigos comentados de requisição, organização, limpeza e ajuste dos dados do BNDES com mesclagem a dados de outras fontes, como o Caged, SEEG, Atlas e Ipeadata. 
   - Disponível nos Notebooks deste repositório: 
     - global_functions.py 
@@ -40,8 +42,13 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
 
     ![](dea/mapa_fronteiras.jpg)
 
-- Network política tal e tal
-  - x
+- Social Network Analysis - Relação de sócios para empresas do BNDES
+  
+  - Network disponível em: http://rondon.me//team8/
+  
+  - Código: 
+  
+    ![](img/network.jpg)
   
 - Análise exploratória e aplicação de Machine Learning nos dos dados de financiamentos não automáticos em relação a sustentabilidade, economia e qualidade das empresas contratantes. 
   - Códigos disponíveis em:
