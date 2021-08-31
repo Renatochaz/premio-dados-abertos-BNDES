@@ -27,12 +27,22 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
     - adjust-IDH-data.ipynb
     - adjust-SEEG-data.ipynb
     - transform-RAW-data.ipynb
+  - Webscrap e mesclagem na base de processos judiciais da empresa, através do site https://www.jusbrasil.com.br/consulta-processual/
+    - scrap_processos_judiciais.js
+    - join_processos.r
+  
 - Fácil visualização dos financiamentos BNDES através de dashboards no Tableau.
   - Disponível em: https://public.tableau.com/app/profile/j.ssica.syrio.callefi
-- Análise de eficiência tal e tal
-  - x
+  
+- Data Envelopment Analysis
+
+  - Código comentado e resultados disponível em: /dea
+
+    ![](dea/mapa_fronteiras.jpg)
+
 - Network política tal e tal
   - x
+  
 - Análise exploratória e aplicação de Machine Learning nos dos dados de financiamentos não automáticos em relação a sustentabilidade, economia e qualidade das empresas contratantes. 
   - Códigos disponíveis em:
     - EDA.ipynb
