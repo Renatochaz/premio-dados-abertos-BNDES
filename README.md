@@ -135,7 +135,7 @@ Foi usado o gás co2e(t) GWP-AR5 como medida de emissão, pois o CO2e (CO2 equiv
 
 O agrupamento para o setor Agrícola e Industrial foi definido a partir da segmentação indicada pelo SEEG (imagem a baixo).
 
-![](img\categorias_seeg.jpg)
+![](img/categorias_seeg.jpg)
 
 Dessa forma, a classificação final de grande setor foi a seguinte:
 
@@ -213,7 +213,7 @@ A variável principal do estudo é o valor do financiamento ajustado do BNDES. Q
 
 Pela estatística descritiva da variável, perceba-se que a variável principal é repleta de outliers.
 
-![](.\img\desc_original.jpg)
+![](img/desc_original.jpg)
 
 
 
