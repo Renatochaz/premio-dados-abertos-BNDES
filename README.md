@@ -135,7 +135,7 @@ Foi usado o gás co2e(t) GWP-AR5 como medida de emissão, pois o CO2e (CO2 equiv
 
 O agrupamento para o setor Agrícola e Industrial foi definido a partir da segmentação indicada pelo SEEG (imagem a baixo).
 
-![Categorias SEEG](.\img\categorias_seeg.jpg)
+![Categorias SEEG](img\categorias_seeg.jpg)
 
 Dessa forma, a classificação final de grande setor foi a seguinte:
 
