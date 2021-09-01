@@ -1,10 +1,54 @@
 # Prêmio Dados Abertos para o Desenvolvimento BNDES
 
-![](/img/banner.jpg)
+![](img/bndes.jpeg)
+
+O Prêmio Dados Abertos para o Desenvolvimento tem como objetivos: 
+
+- incentivar a colaboração entre governo e sociedade;
+
+- promover o engajamento de agentes públicos, cientistas e jornalistas de dados, programadores e desenvolvedores de TI e empreendedores; e
+
+- desenvolver estudos, análises e soluções de empreendedorismo tecnológico para problemas complexos e desafios que contribuam para o aprimoramento e a modernização da gestão pública.
+
+  [Edital do Concurso](https://www.bndes.gov.br/wps/wcm/connect/site/4af22351-97ad-4163-9c6c-15a8406591ed/Edital+Maratona+BNDES+vers%C3%A3o+final.pdf?MOD=AJPERES&CVID=nFujLIl)
+  
+  
+
+# Time 8
+
+Nosso projeto teve como objetivo atuar no pilar da transparência, da efetividade e do impacto na sustentabilidade do país que o banco promove.
+
+**Soluções**
+- [Pitch](https://www.youtube.com/watch?v=e_A6jZoBxyk)
+
+- [Análises e aplicação](http://rondon.me/team8/)
+
+- [Tableau: Visualizações](https://public.tableau.com/app/profile/j.ssica.syrio.callefi)
+
+  
+
+![](img/cidadania.jpg)
 
 
 
-### Time 8
+ ### Transparência
+
+- Criamos reports de visualização que permitem ao cidadão conferir para onde e para quem os financiamentos grandes (não automáticos) e pequenos (automáticos) se destinam;
+- Cruzamos informações das empresas com financiamentos não automáticos com seus sócios, e plotamos um gráfico de rede social demonstrando sócios ligados a múltiplas empresas.
+- Adicionalmente, cruzando informações de processos judiciais com os dados do BNDES, encontramos indícios de grupos de empresa que parecem não agradar a sociedade, e o BNDES consegue indiretamente captar este efeito e diminuir o incentivo ao financiamento. Propomos ao banco a inclusão dessa informação em sua avaliação, para refinar ainda mais seu processo de propostas de financiamento.
+
+### Efetividade
+
+- Utilizamos a Análise Envoltória de Dados, com o modelo slack-based e o índice mamquist para entender a evolução temporal da eficiência dos estados incentivados pelo BNDES. 
+- Cruzamos dados do PIB, Número de empregos e IDH, e com uma Análise Exploratória de Dados, trouxemos insights sobre estados com potencial econômico ainda não muito explorado pelo BNDES.
+
+### Sustentabilidade
+
+- Novamente através da Análise Exploratória de Dados, cruzamos dados de emissão de CO2 dos setores, trazendo informação sobre setores com indícios de melhora sustentável através dos financiamentos do BNDES, assim como insights sobre setores que apresentam grande possibilidade de melhora mas que ainda não recebem incentivos do BNDES.
+
+
+
+**Equipe**
 
 **Msc. Renato Martins Chavez** - https://www.linkedin.com/in/renato-chavez/
 
@@ -18,27 +62,54 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
 
 
 
-### Produtos desenvolvidos
+# Tecnologias utilizadas
 
-- Site com o compilado das solucoes: http://rondon.me//team8/
+- Visualização
+  - [Python](https://www.python.org/)
+  - [Tableau](https://www.tableau.com/)
+  - [JavaScript](https://www.javascript.com/)
+  - [Matlab](https://www.mathworks.com/products/matlab.html)
+  - [Seaborn](https://seaborn.pydata.org/)
+  - [Matplotlib](https://matplotlib.org/)
+  - [Dython](http://shakedzy.xyz/dython/)
+- Engenharia e análise de dados
+  - [Python](https://www.python.org/)
+  - [R](https://www.r-project.org/)
+  - [JavaScript](https://www.javascript.com/)
+  - [Matlab](https://www.mathworks.com/products/matlab.html)
+  - [NumPy](https://numpy.org/)
+  - [Pandas](https://pandas.pydata.org/)
+  - [SciPy](https://www.scipy.org/)
+- Machine Learning
+  - [Python](https://www.python.org/)
+  - [Scikit-learn](https://scikit-learn.org/)
+  - [Kmodes](https://github.com/nicodv/kmodes)
+  - [Plotnine](https://plotnine.readthedocs.io/)
+  - [LightGBM](https://github.com/microsoft/LightGBM)
+  - [Shap](https://github.com/slundberg/shap)
 
-- Códigos comentados de requisição, organização, limpeza e ajuste dos dados do BNDES com mesclagem a dados de outras fontes, como o Caged, SEEG, Atlas e Ipeadata. 
-  - Disponível nos Notebooks deste repositório: 
-    - global_functions.py 
-    - adjust-CAGED-data.ipynb 
-    - adjust-IDH-data.ipynb
-    - adjust-SEEG-data.ipynb
-    - transform-RAW-data.ipynb
-  - Webscrap e mesclagem na base de processos judiciais da empresa, através do site https://www.jusbrasil.com.br/consulta-processual/
-    - scrap_processos_judiciais.js
-    - join_processos.r
+
+
+# Mapa de códigos das análises
+![](img/codemap.png)
+
+
+- Códigos comentados de requisição, organização, limpeza e ajuste dos dados do BNDES:
+
+
+  - [Operações não automáticas e mesclagens](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/transform-RAW-data.ipynb)
+  - [Funções Globais](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/global_functions.py) 
+  - [Ajuste Caged](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/adjust-CAGED-data.ipynb)
+  - [Ajuste IDH](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/adjust-IDH-data.ipynb)
+  - [Ajuste SEEG](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/adjust-SEEG-data.ipynb)
+
+- Código de web scrapping dos processos judiciais:
+  - [Web Scrapping Jusbrasil](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/scrap_processos_judiciais.js)
+  - [Mesclagem dataset principal](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/join_processos.r)
   
-- Fácil visualização dos financiamentos BNDES através de dashboards no Tableau.
-  - Disponível em: https://public.tableau.com/app/profile/j.ssica.syrio.callefi
-  
-- Data Envelopment Analysis
+- Data Envelopment Analysis:
 
-  - Código comentado e resultados disponível em: /dea
+  - [Código Comentado]()
 
     ![](dea/mapa_fronteiras.jpg)
 
