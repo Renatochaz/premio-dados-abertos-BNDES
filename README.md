@@ -23,6 +23,10 @@ O Prêmio Dados Abertos para o Desenvolvimento tem como objetivos:
 
 
 
+- [Navegando pelas soluções](https://www.youtube.com/watch?v=I43Yg_ZeLrM)
+
+  
+
 # Time 8
 
 Nosso projeto teve como objetivo atuar no pilar da transparência, da efetividade e do impacto na sustentabilidade do país que o banco promove.
@@ -61,6 +65,8 @@ Msc. Jéssica Syrio Callefi - https://www.linkedin.com/in/jessica-syrio-callefi-
 PhD. Paulo Nocera Alves Junior - https://www.linkedin.com/in/paulonocera/
 
 Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
+
+
 
 **Pitch** - [Vídeo Time 8](https://www.youtube.com/watch?v=e_A6jZoBxyk)
 
