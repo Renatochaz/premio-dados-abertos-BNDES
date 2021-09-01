@@ -1,0 +1,610 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-fences-math .MathJax_SVG_Display, .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: visible; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; zoom: 90%; }
+#math-inline-preview-content { zoom: 1.1; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-math .MathJax_SVG_Display { margin-top: 8px; cursor: default; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Relatorio_analises</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='análise-exploratória-e-machine-learning-nos-dados-abertos-do-bndes'><span>Análise Exploratória e Machine Learning nos Dados abertos do BNDES</span></h1><p><em><span>Em caso de uso, favor citar: Chavez, R. M. Melo, I. C. Análise Exploratória e Machine Learning nos Dados abertos do BNDES. Prêmio Dados Abertos para o Desenvolvimento. (2021)</span></em></p><p><em><a href='https://www.linkedin.com/in/renato-chavez/' target='_blank' class='url'>https://www.linkedin.com/in/renato-chavez/</a></em></p><p><em><a href='https://github.com/Renatochaz' target='_blank' class='url'>https://github.com/Renatochaz</a></em></p><p><strong><span>Repositório com todos os códigos, bases de dados e imagens utilizadas para este relatório: </span><a href='https://github.com/Renatochaz/bndes-dados-abertos/' target='_blank' class='url'>https://github.com/Renatochaz/bndes-dados-abertos/</a></strong></p><p>&nbsp;</p><p><strong><span>Índice</span></strong></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#análise-exploratória-e-machine-learning-nos-dados-abertos-do-bndes">Análise Exploratória e Machine Learning nos Dados abertos do BNDES</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n9"><a class="md-toc-inner" href="#1-introdução">1. Introdução</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n20"><a class="md-toc-inner" href="#2-bases-de-dados">2. Bases de dados</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n22"><a class="md-toc-inner" href="#21-dados-de-financiamento-não-automáticos-do-bndes">2.1. Dados de financiamento não automáticos do BNDES</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n44"><a class="md-toc-inner" href="#22-dados-de-emissão-de-co2-do-sistema-de-estimativas-de-emissões-e-remoções-de-gases-de-efeito-estufa">2.2. Dados de emissão de CO2 do Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n62"><a class="md-toc-inner" href="#23-dados-do-produto-interno-bruto">2.3. Dados do Produto Interno Bruto</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n68"><a class="md-toc-inner" href="#24-dados-de-número-de-empregados-do-cadastro-geral-de-empregados-e-desempregados">2.4. Dados de número de empregados do Cadastro Geral de Empregados e Desempregados</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n77"><a class="md-toc-inner" href="#25-dados-do-índice-de-desenvolvimento-humano">2.5. Dados do Índice de Desenvolvimento Humano</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n82"><a class="md-toc-inner" href="#26-dados-de-quantidade-de-processos-judiciais">2.6. Dados de quantidade de processos judiciais</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n86"><a class="md-toc-inner" href="#3-análise-exploratória">3. Análise exploratória</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n88"><a class="md-toc-inner" href="#31-estatísticas-da-variável-principal-valor-do-financiamento-por-contrato">3.1. Estatísticas da variável principal: Valor do financiamento por contrato</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n91"><a class="md-toc-inner" href="#311-estatística-descritiva">3.1.1. Estatística descritiva</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n105"><a class="md-toc-inner" href="#312-relação-com-variáveis-categóricas">3.1.2. Relação com variáveis categóricas</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n120"><a class="md-toc-inner" href="#313-relação-com-variáveis-numéricas">3.1.3. Relação com variáveis numéricas</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n134"><a class="md-toc-inner" href="#314-heatmap-de-correlações">3.1.4. Heatmap de correlações</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n176"><a class="md-toc-inner" href="#32-eixo-sustentabilidade-financiamentos-do-bndes-e-as-emissões-de-co2">3.2 Eixo Sustentabilidade: Financiamentos do BNDES e as emissões de CO2</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n181"><a class="md-toc-inner" href="#321-comportamento-da-emissão-de-co2-para-os-produtos-do-bndes">3.2.1. Comportamento da emissão de CO2 para os produtos do BNDES.</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n200"><a class="md-toc-inner" href="#322-maiores-emissores-de-co2--da-indústria-brasileira-e-o-financiamento-bndes">3.2.2. Maiores emissores de CO2  da indústria brasileira e o financiamento BNDES.</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n226"><a class="md-toc-inner" href="#323-maiores-emissores-de-co2--da-agropecuária-brasileira-e-o-financiamento-bndes">3.2.3 Maiores emissores de CO2  da agropecuária brasileira e o financiamento BNDES</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n252"><a class="md-toc-inner" href="#33-eixo-econômico-financiamentos-do-bndes-pib-e-número-de-empregos">3.3 Eixo Econômico: Financiamentos do BNDES, PIB e Número de empregos</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n257"><a class="md-toc-inner" href="#331-tendência-do-comportamento-do-financiamento-do-bndes-em-relação-a-riqueza-dos-estados">3.3.1. Tendência do comportamento do Financiamento do BNDES em relação a riqueza dos estados</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n270"><a class="md-toc-inner" href="#332-financiamento-do-bndes-em-relação-as-maiores-indústrias-do-país">3.3.2. Financiamento do BNDES em relação as maiores Indústrias do país</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n280"><a class="md-toc-inner" href="#333-financiamento-do-bndes-em-relação-as-maiores-agropecuárias-do-país">3.3.3. Financiamento do BNDES em relação as maiores Agropecuárias do país</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n292"><a class="md-toc-inner" href="#extra-gráficos-para-o-idh">Extra: Gráficos para o IDH.</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n308"><a class="md-toc-inner" href="#4-machine-learning-aprendizado-não-supervisionado-e-a-relação-de-processos-judiciais">4. Machine Learning: Aprendizado não supervisionado e a relação de processos judiciais.</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n312"><a class="md-toc-inner" href="#41-relação-dos-financiamentos-do-bndes-com-a-quantidade-de-processos-judiciais-das-empresas">4.1 Relação dos Financiamentos do BNDES com a quantidade de processos judiciais das empresas</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n332"><a class="md-toc-inner" href="#42-clusterização-por-k-prototypes">4.2 Clusterização por K-Prototypes</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n381"><a class="md-toc-inner" href="#421-diferenças-entre-grupos-clusterizados">4.2.1 Diferenças entre grupos clusterizados</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n448"><a class="md-toc-inner" href="#5-conclusões">5. Conclusões</a></span></p></div><h1 id='1-introdução'><span>1. Introdução</span></h1><p><span>Este trabalho se concentrou em entender a real destinação dos financiamentos empresariais do BNDES e seus impactos na sustentabilidade,considerando pilares econômicos, sociais e ambientais. </span></p><p><span>Para tal, foram utilizadas as bases de dados de operações de financiamento não automáticos e os automáticos indiretos do BNDES. Também foram agregadas outras seis bases de dados públicas para aprofundar a investigação. O tratamento dos dados dessas bases é detalhadamente explicado na Seção 2 deste relatório. A bases utilizadas foram: </span></p><p><span>(i)             Sistema de Estimativas de missões e Remoções de Gases de Efeito Estufa (SEEG), para investigar os impactos nas emissões,considerando níveis estaduais e setoriais;</span></p><p><span>(ii)           Cadastro Geral de Empregados e Desempregados(CAGED), para investigar os impactos nos empregos;</span></p><p><span>(iii)          Atlas do Desenvolvimento Humano no Brasil, para investigar os impactos nos IDH em diversos níveis;</span></p><p><span>(iv)          Instituto de Pesquisa Econômica Aplicada (IPEA),para investigar os impactos no PIB em diversos níveis e fazer correções financeiras;</span></p><p><span>(v)           Receita Federal, para entender a estrutura societária das empresas financiadas;</span></p><p><span>(vi)          JusBrasil, para levantamento do número de processos judiciais das empresas financiadas.</span></p><p><span>Para atingir o objetivo proposto, considerou-se fundamental priorizar a transparência e o compartilhamento das informações com a sociedade em geral. Para isso, a investigação partiu dos ajustes e considerações para ajustar os dados (Seção 2) e se aprofundou em métodos de análise quantitativos avançados, isto é,  Data Envelopment Analysis (Seção 3) e Machine Learning (Seção 4).</span></p><p><span>Os resultados (discutidos ao longo das seções e brevemente sumarizados na Seção 5) proporcionaram insights surpreendentes sobre como tornar os financiamentos empresariais do BNDES ainda mais fortes na promoção do desenvolvimento sustentável e impactar positivamente a vida de um maior número de pessoas.</span></p><h1 id='2-bases-de-dados'><span>2. Bases de dados</span></h1><p><span>Esta seção descreve quais bases de dados e ajustes foram realizados para a execução das análises deste projeto.</span></p><h2 id='21-dados-de-financiamento-não-automáticos-do-bndes'><span>2.1. Dados de financiamento não automáticos do BNDES</span></h2><p><span>A base de dados principal do trabalho é referente ao dataset de financiamentos não automáticos do BNDES. </span></p><p><span>O dicionário das variáveis presentes no dataset podem ser consultado em: </span><a href='https://dadosabertos.bndes.gov.br/dataset/operacoes-financiamento/resource/d7c266e2-879f-4f90-a7e7-598d9b6f7738' target='_blank' class='url'>https://dadosabertos.bndes.gov.br/dataset/operacoes-financiamento/resource/d7c266e2-879f-4f90-a7e7-598d9b6f7738</a><span>.</span></p><p><span>As operações de ajuste no dataset foram as seguintes:</span></p><ul><li><span>Ingestão via API e seleção das observações dos seguintes setores_bndes: Indústria, Agropecuária e Infraestrutura</span></li><li><span>Remoção de 541observações duplicadas</span></li><li><span>Remoção de 250 observações da modalidade_de_apoio: Não reembolsável</span></li><li><span>Remoção de 189 observações da situação_do_contrato: &#39;-&#39;</span></li><li><span>Definição da variável de valor usada em todo o trabalho: valor_desembolsado</span></li><li><span>Ajuste de inflação do valor_desembolsado pelo IGP-M, com referência de valor a data de dezembro de 2010, resultando em uma nova variável de valor comparável para todas as observações: valor_desembolsado_ajustado</span></li><li><span>Remoção de 834 observações que tinham valor_desembolsado = 0</span></li><li><span>Estamos interessados em entender a relação do valor do financiamento por contrato, por isto os dados  são agrupados por contrato (a não ser quando especifica-se no contexto da análise que o agrupamento está em outro nível, como a nível de estado e ano para as análises de IDH)</span></li></ul><p>&nbsp;</p><h2 id='22-dados-de-emissão-de-co2-do-sistema-de-estimativas-de-emissões-e-remoções-de-gases-de-efeito-estufa'><span>2.2. Dados de emissão de CO2 do Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa</span></h2><p><span>O Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa (SEEG), desenvolvido pelo Observatório do Clima, disponibiliza estimativas anuais das emissões de gases de efeito estufa(GEE) no Brasil. São considerados os gases de efeito estufa(como CO2, CH4, N2O, os HFCs, e apresentados como CO2e) e avaliados todos os cinco setores que são fontes de emissões – Agropecuária, Energia, Mudanças de Uso da Terra, Processos Industriais e Resíduos, em cidades e estados do Brasil.</span></p><p>&nbsp;</p><p><span>As estimativas são feitas de acordo com as diretrizes do Painel Intergovernamental sobre Mudanças Climáticas(IPCC), com base na metodologia dos Inventários Brasileiros de Emissões e Remoções Antrópicas de Gases do Efeito Estufa, elaborado pelo Ministério da Ciência, Tecnologia e Inovação(MCTI), e em dados obtidos junto a relatórios governamentais, institutos, centros de pesquisa, entidades setoriais e organizações não governamentais</span></p><p>&nbsp;</p><p><span>Essas informações podem ser encontradas no site do SEEG (</span><a href='http://seeg.eco.br/' target='_blank' class='url'>http://seeg.eco.br/</a><span>), onde também é possível visualizar e fazer download das estimativas, assim como ver detalhes sobre a metodologia e a qualidade dos dados. Link para artigo com a metodologia do SEEG, publicado na NATURE, em 2018: </span><a href='https://www.nature.com/articles/sdata201845' target='_blank' class='url'>https://www.nature.com/articles/sdata201845</a><span>.</span></p><p>&nbsp;</p><p><span>Foi usado o gás co2e(t) GWP-AR5 como medida de emissão, pois o CO2e (CO2 equivalente) converte todas as outras medidas e gases em CO2. O GWP é a métrica de conversão mais comum, com base na energia e potencial de aquecimento. O AR5 é o mais recente.</span></p><p>&nbsp;</p><p><span>O agrupamento para o setor Agrícola e Industrial foi definido a partir da segmentação indicada pelo SEEG (imagem a baixo).</span></p><p><img src="./img/categorias_seeg.jpg" referrerpolicy="no-referrer" alt="Categorias SEEG"></p><p><span>Dessa forma, a classificação final de grande setor foi a seguinte:</span></p><p><span>-</span><span> Agropecuária = Agropecuária (nível 1) e Mudança de Uso da Terra e Florestas (nível 1)</span></p><p><span>-</span><span> Indústria = Processos Industriais (nivel 1)</span></p><p><span>Nota-se que uma pequena fração da emissão agropecuária vem de resíduos, e cerca de 20% da emissão industrial vem de energia. </span></p><p><span>Para agregar estes dados, é necessário iterar por inúmeras tabelas do SEEG que iriam consumir grande parte do tempo disponível para o concurso, por isso é importante ressaltar que as emissões não estão 100% ajustadas. Essa sugestão fica para futuros trabalhos, que podem inclusive segmentar a emissão por nível 3 e conseguir maior granularidade na análise.</span></p><p><span>Adicionalmente, é analisado exclusivamente a emissão de CO2, e não a remoção.</span></p><p>&nbsp;</p><h2 id='23-dados-do-produto-interno-bruto'><span>2.3. Dados do Produto Interno Bruto</span></h2><p><span>Foram levantados dados do produto interno bruto do setor Industrial e Agrícola, para os anos de 2002 a 2017 de todos os estados brasileiros.</span></p><p><span>Os dados estão em escala de R$1000,00, com a PIB real em valores de 2010 pelo deflator implícito do PIB nacional.</span></p><p><span>Esta escala foi revertida para o valor em unidade, para ser comparável com o valor_desembolsado_ajustado, que foi deflacionado para a mesma data de valor do PIB.</span></p><p><span>Os dados do pib estão disponíveis em: </span><a href='http://www.ipeadata.gov.br/Default.aspx' target='_blank' class='url'>http://www.ipeadata.gov.br/Default.aspx</a></p><p>&nbsp;</p><h2 id='24-dados-de-número-de-empregados-do-cadastro-geral-de-empregados-e-desempregados'><span>2.4. Dados de número de empregados do Cadastro Geral de Empregados e Desempregados</span></h2><p><span>Foram recolhidos dados do número de empregos da plataforma do Cadastro Geral de Empregados e Desempregados (CAGED) do governo. Os dados estão segmentados por ano, setor, estado e tamanho da empresa.</span></p><p><span>A classificação do tamanho da empresa foi realizada através do padrão adotado no CAGED, que segue o seguinte formato:</span></p><p><span>Micro: com até 19 empregados.</span></p><p><span>Pequena: de 20 a 99 empregados.</span></p><p><span>Média: 100 a 499 empregados.</span></p><p><span>Grande: mais de 500 empregados.</span></p><p><span>Os dados estão disponíveis para consulta no seguinte endereço: bi.mte.gov.br/bgcaged</span></p><p>&nbsp;</p><h2 id='25-dados-do-índice-de-desenvolvimento-humano'><span>2.5. Dados do Índice de Desenvolvimento Humano</span></h2><p><span>Neste trabalho foram usados os dados do Índice de Desenvolvimento Humano (IDH) do Atlas Brasil.</span></p><p><span>Os dados de IDH estão disponíveis para os estados brasileiros nos anos de 2010, 2016 e 2017.</span></p><p><span>Dados disponíveis em: </span><a href='http://www.atlasbrasil.org.br/ranking' target='_blank' class='url'>http://www.atlasbrasil.org.br/ranking</a></p><p>&nbsp;</p><h2 id='26-dados-de-quantidade-de-processos-judiciais'><span>2.6. Dados de quantidade de processos judiciais</span></h2><p><span>Os dados de quantidade de processos judiciais por empresa foram coletados através de um web scrapping (arquivo scrap_processos_judiciais.js) que faz a consulta - empresa por empresa - em todos os tribunais do país pelo site do </span><a href='https://www.jusbrasil.com.br/consulta-processual/' target='_blank' class='url'>https://www.jusbrasil.com.br/consulta-processual/</a><span>.</span></p><p><span>A quantidade total de processos judiciais de uma empresa é um reflexo da sua contribuição com a sociedade, desta forma usamos a quantidade total de processos de uma empresa como </span><em><span>proxy</span></em><span> para empresas que podem não estar contribuindo tanto para a sociedade quanto se esperaria.</span></p><p>&nbsp;</p><h1 id='3-análise-exploratória'><span>3. Análise exploratória</span></h1><p>&nbsp;</p><h2 id='31-estatísticas-da-variável-principal-valor-do-financiamento-por-contrato'><span>3.1. Estatísticas da variável principal: Valor do financiamento por contrato</span></h2><p><span>A variável principal do estudo é o valor do financiamento ajustado do BNDES. Queremos observar se os financiamentos do BNDES estão impulsionando melhorias na sociedade, por isto é analisado o comportamento desta variável dentro do dataset.</span></p><p>&nbsp;</p><h3 id='311-estatística-descritiva'><span>3.1.1. Estatística descritiva</span></h3><p><span>Pela estatística descritiva da variável, perceba-se que a variável principal é repleta de outliers.</span></p><p><img src="./img/desc_original.jpg" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Plotando a função densidade de probabilidade, nota-se uma distribuição não normal com forte assimetria positiva, e características distintas entre o porte do cliente que fez o empréstimo.</span></p><p><img src="./img/graph_fdp_outliers.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Devido a grande influência de outliers, os dados de financiamento são winsorizados nas duas caudas a 5%, buscando uma forma de amenizar a distribuição e possibilitar a busca de relações com outras variáveis.</span></p><p><span>Uma análise descritiva dos dados winsorizados demonstra uma grande melhora no comportamento da variável:</span></p><p><img src="./img/desc_winsorizado.jpg" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Plotando a f.d.p, percebe-se uma suavização da distribuição e nota-se com mais clareza a distinção entre o grupo de empresas grandes do resto. </span></p><p><img src="./img/graph_fdp.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><h3 id='312-relação-com-variáveis-categóricas'><span>3.1.2. Relação com variáveis categóricas</span></h3><p><img src="./img/box_setor.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observamos uma distinção do comportamento do financiamento para os diferentes setores do BNDES. O Setor de Infraestrutura tem o maior valor médio por contrato, seguido da Indústria e por último a Agropecuária. </span></p><p>&nbsp;</p><p><span>Mesmo com a winsorização, a presença de outliers é evidente.</span></p><p><img src="./img/box_natureza.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><strong><span>A relação do financiamento com a natureza do cliente também parece ser bem distinta, com o maior valor médio de contrato indo as empresas públicas indiretas e para o governo estadual.</span></strong></p><p><img src="./img/box_estado.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observando o box-plot para os estados, notamos que as maiores médias de desembolso vão para: Roraima, Pará, Maranhão, Distrito Federal, Amapá, Tocantins e Interestadual.</span></p><p><strong><span>Esta é uma tendência interessante, parece que estados menos desenvolvidos fazem um menor número de financiamentos com menor volume total, porém individualmente fazendo grandes contratos.</span></strong></p><p>&nbsp;</p><h3 id='313-relação-com-variáveis-numéricas'><span>3.1.3. Relação com variáveis numéricas</span></h3><p><span>Nesta seção iremos analisar apenas a relação com as variáveis numéricas do próprio dataset, pois as informações de IDH, PIB, Número de empregados e Emissão de CO2 estão agrupados por estado e não podemos observar a relação individual de financiamento por contrato com as mesmas. Nas próximas seções exploraremos este ponto assim como a relação com o número de processos.</span></p><p><em><span>Cabe notar que a sequência de pontos contínuos nas caudas dos gráficos vem do método de winsorização utilizado para lidar com outliers.</span></em></p><p><img src="./img/juros.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Parece haver uma relação negativa entre o valor do financiamento e os juros, indicando que maiores valores de financiamento estão associados a condições melhores de pagamento.</span></p><p><img src="./img/carencia.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Parece haver uma relação positiva entre o valor do financiamento e os prazo de carência, indicando que maiores valores de financiamento estão associados a condições melhores de pagamento.</span></p><p><img src="./img/amortizacao.png" referrerpolicy="no-referrer"></p><p><span>Parece haver uma relação positiva entre o valor do financiamento e o prazo de amortização, indicando que maiores valores de financiamento estão associados a condições melhores de pagamento.</span></p><p>&nbsp;</p><p><strong><span>Nota-se que existe um incentivo de custo de oportunidade para empresas que conseguem financiar maiores valores, indicando um incentivo a grandes empresas financiarem.</span></strong></p><p>&nbsp;</p><h3 id='314-heatmap-de-correlações'><span>3.1.4. Heatmap de correlações</span></h3><p><span>Para criar o heatmap de correlações, foi utilizado o módulo nominal.associations do pacote dython. Este módulo é ajustado para analisar a correlação entre variáveis continuas-continuas, categóricas-continuas e categóricas-categóricas.</span></p><p><span>A correlação entre variáveis continuas-categóricas é um tema com muita discussão, por isso é importante interpretar essas correlações com cautela, até mesmo por que a interpretação de uma variável continua com uma categórica não é intuitiva, no melhor dos casos podemos entender que os fatores da variável categórica tem variâncias distintas em relação a variável contínua, e por isso existe uma correlação.</span></p><p><span>Para calcular as correlações, o dataset foi agrupado a nível de setor, ano e estado, pois essa é a granularidade dos dados do pib, emissão_co2 e num_empregados (após desagrupar por porte_do_cliente). O idhm está a nível de estado e ano, por isso o cálculo de correlação para essa variável se torna menos preciso, e portanto menos interpretável.</span></p><p><span>Pontuado estes pontos, vamos as correlações:</span></p><p><img src="./img/heatmap_adj.png" referrerpolicy="no-referrer"></p><ul><li><p><strong><span>Valor_desembolsado_ajustado:</span></strong></p><ul><li><p><span>Correlação negativa com juros e positiva com carência e amortização, assim como esperado pela análise bivariada.</span></p></li><li><p><span>Variação positiva para estado e setor, o estado parece ser mais importante para explicar o financiamento do que o setor, o que está de acordo com os box-plots analisados.</span></p></li><li><p><span>Parece haver um indício negativo fraco de correlação com o pib, número de empregos e idh. É esperado que se o BNDES influência estas grandes variáveis macroeconômicas, a sua influência seja limitada. </span></p><p><span>Não é simples indicar se essa evidência é uma correlação significativa e causal ou é uma correlação espúria, faremos análises gráficas mais detalhadas nas próximas seções para levantar hipóteses sobre essa possível correlação.</span></p></li><li><p><span>Existe uma correlação negativa e até maior do que o esperado entre o financiamento e as emissões de co2, este parece ser um ponto interessante para invertigar.</span></p></li></ul></li><li><p><strong><span>Outras variáveis:</span></strong></p><ul><li><p><span>Encontramos correlações esperadas entre pib, número de empregos e emissão de co2, estado e setor. O heatmap e as variáveis parecem estar de acordo com o que se espera na realidade.</span></p></li><li><p><span>Não observamos correlações esperadas para a variável idh, parece que pelo fato do seu agrupamento ser diferente e termos poucos anos disponíveis (2010, 2016 e 2017), não é trivial correlacionarmos o mesmo.</span></p><p><strong><span>Talvez uma estratégia que possa ser adotada por futuros trabalhos é a de juntar as bases de financiamentos automáticos e não automáticos, filtrar para os anos de 2010, 2016 e 2017 com o pib e procurar entender essa relação melhor em um ambiente amostrar apropriado.</span></strong></p></li></ul></li></ul><p>&nbsp;</p><p><span>Também estamos interessados em observar as correlações para a quantidade de processos judiciais por empresa, por isso o dataset foi agrupado a nível de cliente, retornando apenas as variáveis principais observadas no heatmap acima e em nível de granularidade compatível com este agrupamento a nível do cliente, para observar como a correlação de processos judiciais se comporta.</span></p><p>&nbsp;</p><p><img src="./img/heatmap_processos.png" referrerpolicy="no-referrer"></p><ul><li><p><strong><span>Processos judiciais:</span></strong></p><ul><li><p><strong><span>Parece haver uma correlação positiva com o financiamento, indicando que clientes com maior número de processos judiciais pegar financiamentos maiores.</span></strong><span> </span></p><p><span>Isso faz sentido, pois clientes maiores fazem empréstimos maiores e em geral tem maior número de processos. Mas esse é um ponto interessante que será explorado mais afundo.</span></p></li><li><p><span>Outra correlação que se destaca é a correlação negativa com o prazo de amortização. Pelo que observamos do BNDES, essa correlação deveria ser positiva, pois se clientes maiores tem mais processos, e fazem empréstimos maiores, deveriam ter um prazo de amortização maior pelo que observamos acima. </span></p><p><strong><span>Esse não parece ser o caso, então será possível que o BNDES capta que estas empresas por terem maior quantidade de processos, tem maior risco e consequentemente menor estímulo ao financiamento? Esse é um ponto importante que será analisado nas próximas seções.</span></strong></p></li></ul></li></ul><h2 id='32-eixo-sustentabilidade-financiamentos-do-bndes-e-as-emissões-de-co2'><span>3.2 Eixo Sustentabilidade: Financiamentos do BNDES e as emissões de CO2</span></h2><p>&nbsp;</p><p><span>Observou-se na seção 3.1 que parece haver algum indício de que os financiamentos do BNDES contribuam para uma diminuição das emissões de CO2. </span></p><p><span>Neste tópico é feita uma análise gráfica de séries temporais, com o objetivo de observar o comportamento das emissões de CO2 de alguns setores dos estados brasileiro, e se parece haver alguma tendência com os desembolsos do BNDES para este setor-estado.</span></p><p>&nbsp;</p><h3 id='321-comportamento-da-emissão-de-co2-para-os-produtos-do-bndes'><span>3.2.1. Comportamento da emissão de CO2 para os produtos do BNDES.</span></h3><p>&nbsp;</p><p><span>Primeiro vamos observar a tendência de emissões em relação ao financiamento do BNDES  de modo geral:</span></p><p><img src="./img/emissao.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Da mesma forma que foi observado durante a análise de correlação, parece haver uma tendência de que maiores valores de financiamento estão associados a um menor nível de emissão de CO2. </span></p><p><span>O BNDES tem o produto BNDES FINEM, que entre outros instrumentos financeiros, englobam os incentivos sustentáveis do banco.</span></p><p><span>Filtrou-se o dataset para os produtos BNDES FINEM e plotou-se a mesma relação:</span></p><p><img src="./img/emissao_finem.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Aparentemente, entre o grupo de empresas que optam por produtos BNDES FINEM, desembolsos maiores se relacionam com menores emissões de CO2.</span></p><p>&nbsp;</p><p><span>Agora, filtrando o dataset para produtos que </span><strong><span>não</span></strong><span> sejam do BNDES FINEM, observamos a seguinte tendência:</span></p><p><img src="./img/emissao_semfinem.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Agora a tendência se inverte e financiamentos maiores parecem estar associados a maiores níveis de emissão de CO2.</span></p><p><strong><span>Parece que o produto BNDES FINEM tem um bom direcionamento para objetivos sustentáveis, essa é uma relação que pode ser estudada com maior detalhamento em trabalhos futuros.</span></strong></p><p>&nbsp;</p><p><span>Devido aos dados de emissão de CO2 estarem disponíveis para a Indústria e Agropecuária, iremos analisar estes dois setores separadamente nas próximas sessões.</span></p><h3 id='322-maiores-emissores-de-co2--da-indústria-brasileira-e-o-financiamento-bndes'><span>3.2.2. Maiores emissores de CO2  da indústria brasileira e o financiamento BNDES.</span></h3><p>&nbsp;</p><p><span>Embora </span><strong><span>fazer uma análise para cada estado seja uma boa oportunidade de atuação para trabalhos futuros</span></strong><span>, não houve tempo suficiente para realizar essa análise por estado neste estudo. Aqui é feita uma primeira exploração no problema ao olharmos para os três estados que mais emitem CO2:</span></p><p>&nbsp;</p><p><img src="./img/1.emiss_ind.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observa-se que os maiores emissores são o estado de Minas Gerais, seguido por São Paulo e Rio de Janeiro.</span></p><p><span>Minas Gerais parece estar aumentando sua emissão ao longo dos anos, enquanto São Paulo vem diminuindo e o Rio se mantém estável, com um pico entre 2010 e 2013.</span></p><p>&nbsp;</p><p><img src="./img/1.des_ind_emiss.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><ul><li><p><strong><span>MG</span></strong></p><p><span>O desembolso do BNDES para a Indústria destes estados, nota-se que houve um crescimento dos financiamentos entre 2002 e 2007. Este acumulo de financiamentos pode estar associado a algum projeto de longa duração que surtiu efeito na diminuição das emissões entre 2008 e 2009. Porém os financiamentos foram diminuindo ao longo do restante do período e as emissões aumentando.</span></p><p><strong><span>A indústria do MG parece ser um local que o BNDES poderia direcionar incentivos do produto FINEM, visto que é o maior emissor do país e vem requisitando poucos incentivos ao longo dos últimos anos.</span></strong></p><p>&nbsp;</p></li><li><p><strong><span>SP</span></strong></p><p><span>No estado de São Paulo observou-se um grande volume de financiamento do BNDES, que veio diminuindo ao mesmo tempo que as emissões de CO2 do estado também diminuíram. Parece haver a possibilidade de que os financiamentos do BNDES contribuíram para este efeito, e </span><strong><span>este é um ponto que vale a pena um estudo mais profundo de inferência de causalidade.</span></strong></p></li></ul><p><img src="./img/3.pib_ind.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observando os estados com maior PIB da indústria, nota-se que são os mesmos estados que são os maiores emissores de CO2.</span></p><p><span>Porém, o maior PIB da indústria é do estado de São Paulo, que se mantém muito maior que os outros estados mesmo tendo diminuído consideravelmente sua emissão de CO</span><strong><span>2.</span></strong></p><p><strong><span>Aparentemente, a diminuição da emissão não causa um grande impacto no PIB deste setor, e este é um ponto importante para o BNDES levantar ao incentivar as indústrias de outros estados a diminuírem seus níveis de emissão, além de ser importante direcionar os financiamentos.</span></strong></p><p>&nbsp;</p><h3 id='323-maiores-emissores-de-co2--da-agropecuária-brasileira-e-o-financiamento-bndes'><span>3.2.3 Maiores emissores de CO2  da agropecuária brasileira e o financiamento BNDES</span></h3><p>&nbsp;</p><p><span>Utilizando a mesma estratégia da análise pro setor industrial, nesta sub-seção procurou-se analisar como as emissões de CO2 do setor da agropecuária se relacionam com os financiamentos do BNDES.</span></p><p><img src="./img/2.emis_agro.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observa-se que os maiores emissores são o estado do Mato Grosso, seguido do Pará e de Rondônia.</span></p><p><span>Os três estados parecem estar diminuindo os níveis de emissão ao longo do tempo, porém cabe destacar que pelo que foi observado pelo gráfico do SEEG e pela escala de emissão deste gráfico, que as emissões da agropecuária são muito maiores que as da indústria.</span></p><p><img src="./img/2.des_emis_agro.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Diferente do cenário da indústria, observa-se que o financiamento do BNDES para os estados que mais emitem CO2 da agropecuária são bem menos relevantes.</span></p><p><span>A escala do valor do desembolso deste gráfico é muito menor que a do setor da indústria, Mato Grosso teve um pico de investimento no começo do século XXI e parou de fazer financiamentos desde 2015. </span></p><p><span>O estado do Pará teve pouquíssimos financiamentos entre 2007 e 2012 e Rondônia não teve financiamentos.</span></p><p>&nbsp;</p><p><span>Levando em conta que estes estados são os maiores responsáveis pela emissão de CO2 </span><strong><span>total do Brasil</span></strong><span>, levanta-se aqui a sugestão que o BNDES </span><strong><span>direcione financiamentos, principalmente do produto FINEM para estados com urgência, pois existe uma grande oportunidade de atuação.</span></strong></p><p><img src="./img/4.pib_agro.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observando os estados com maior PIB da agropecuária brasileira, notamos que eles não são os estados responsáveis pelo maior volume de emissões de CO2, conforme o gráfico abaixo:</span></p><p><img src="./img/4.des_emis_pib_agro.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>As emissões de CO2 destes estados está em uma escala dez vezes menor do que a dos estados do MT, PA e RO, indicando que seu nível de emissão é muito menor, porém seus PIBS são os maiores para o país.</span></p><p>&nbsp;</p><p><img src="./img/4.des_pib_agro.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observando o incentivo do BNDES para a agropecuária destes estados, observa-se que o BNDES financia muito mais suas atividades, o que é compreensível visto que são os estados com maior PIB deste setor.</span></p><p><strong><span>Porém, como foi pontuado anteriormente, estes estados não apresentam grandes oportunidades no eixo da sustentabilidade. Uma estratégia muito mais importante é atingir os estados que mais emitem CO2 da agropecuária, que não são os mesmos que procuram mais financiamentos hoje em dia.</span></strong></p><p>&nbsp;</p><h2 id='33-eixo-econômico-financiamentos-do-bndes-pib-e-número-de-empregos'><span>3.3 Eixo Econômico: Financiamentos do BNDES, PIB e Número de empregos</span></h2><p>&nbsp;</p><p><span>Observou-se na seção 3.1 que existem indícios fracos de que os financiamentos do BNDES estejam correlacionados a estados com menor riqueza.</span></p><p><span>Conforme foi pontuado, não é simples indicar se essa evidência é uma correlação significativa, pois a riqueza de um estado depende de uma grande quantidade de características observáveis e não observáveis, e é esperado que se o BNDES influência estas grandes variáveis macroeconômicas, a sua influência seja estritamente limitada. </span></p><p><span>Para explorar este ponto, foram feitas visualizações simples de tendências que podem servir como hipóteses para trabalhos futuros, que podem explorar estes pontos em maior profundidade e chegar a conclusões mais assertivas.</span></p><h3 id='331-tendência-do-comportamento-do-financiamento-do-bndes-em-relação-a-riqueza-dos-estados'><span>3.3.1. Tendência do comportamento do Financiamento do BNDES em relação a riqueza dos estados</span></h3><p>&nbsp;</p><p><span>Nesta seção os dados não estão mais agrupados por setor, e sim a nível de estado e de ano, em formato de painel.</span></p><p><span>Usou-se este formato para analisar o comportamento dos financiamentos do BNDES para os níveis de riqueza dos estados brasileiros.</span></p><p>&nbsp;</p><p><img src="./img/pib.png" referrerpolicy="no-referrer"></p><p><span>Neste gráfico de dispersão observamos uma relação positiva acentuada para os financiamentos do BNDES em relação ao PIB dos estados. </span></p><p><span>Este gráfico sugere que estados mais ricos recebam um volume total maior de financiamentos.</span></p><p>&nbsp;</p><p><img src="./img/empregos.png" referrerpolicy="no-referrer"></p><p><span>A tendência observada para o PIB é a mesma para a quantidade de empregos, o que é esperado, já que maiores PIBS estão altamente correlacionados a maior número de empregos.</span></p><p>&nbsp;</p><h3 id='332-financiamento-do-bndes-em-relação-as-maiores-indústrias-do-país'><span>3.3.2. Financiamento do BNDES em relação as maiores Indústrias do país</span></h3><p><span>Nesta seção foi utilizado a quantidade de empregos como proxy de riqueza para os setores industriais.</span></p><p><span>Os dados da quantidade de empregos foram agrupados a nível de setor, resultando no gráfico abaixo:</span></p><p>&nbsp;</p><p><img src="./img/5.emp_ind.png" referrerpolicy="no-referrer"></p><p><span>Nota-se que embora SP e MG continuem aparecendo com maiores estados da Indústria, o estado do Rio grande do Sul substituir o estado do Rio de Janeiro nesta seção, pois embora a indústria do RS tenha um PIB menor, este estado tem maior quantidade de empregos.</span></p><p>&nbsp;</p><p><img src="./img/5.des_emp_ind.png" referrerpolicy="no-referrer"></p><p><strong><span>Analisando graficamente o desembolso para o estado do RS, parece haver uma similaridade com os desembolsos para o estado do RJ. Isto indica que a tendência de maior volume de financiamentos para estados mais ricos é a mesma, usando tanto o PIB quanto número de empregados como </span><em><span>proxy</span></em><span> para riqueza.</span></strong></p><p>&nbsp;</p><h3 id='333-financiamento-do-bndes-em-relação-as-maiores-agropecuárias-do-país'><span>3.3.3. Financiamento do BNDES em relação as maiores Agropecuárias do país</span></h3><p>&nbsp;</p><p><span>Nesta seção foi utilizado a quantidade de empregos como </span><em><span>proxy</span></em><span> de riqueza para os setores da agropecuária.</span></p><p><span>Os dados da quantidade de empregos foram agrupados a nível de setor, resultando no gráfico abaixo:</span></p><p>&nbsp;</p><p><img src="./img/6.emp_agro.png" referrerpolicy="no-referrer"></p><p><span>Diferente do gráfico com os maior PIB da agropecuária, o estado de MG aparece aqui como segundo maior em quantidade de empregos para este setor, substituindo o RS que é um dos maiores estados em PIB.</span></p><p>&nbsp;</p><p><img src="./img/6.des_emp_agro.png" referrerpolicy="no-referrer"></p><p><span>Quando analisamos os incentivos de financiamento para a agropecuária de MG, percebe-se que foram poucos incentivos começando em 2008, com pico em 2013.</span></p><p><strong><span>Parece que o setor agropecuário de Minas Gerais apresenta uma boa oportunidade de incentivo, que ainda é pouco explorado.</span></strong></p><p>&nbsp;</p><h3 id='extra-gráficos-para-o-idh'><span>Extra: Gráficos para o IDH.</span></h3><p><span>Conforme pontuado na seção 3.1, os dados do IDH parecem não estarem muito representativos nesta base de dados, pois seria esperado que houvesse uma grande correlação com o PIB e número de empregos, o que não se mostrou nos dados.</span></p><p><span>Por este motivo, não será feita nenhuma análise para os indicadores de IDH nesta amostra.</span></p><p><span>Aqui iremos pontuar apenas que esta é uma relação importante a ser explorada mais a fundo, talvez usando esta mesma base dados e filtrando apenas para os anos em que o IDH está disponível para os estados (2010, 2016 e 2017.)</span></p><p><span>Adicionalmente, alguns gráficos foram plotados para o IDH, eles serão apresentados abaixo, apenas como curiosidade.</span></p><p>&nbsp;</p><p><strong><em><span>Gráficos de tendência</span></em></strong></p><p><img src="./img/idh.png" referrerpolicy="no-referrer"></p><p><img src="./img/idh_semfinem.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><strong><em><span>Série temporal dos estados com maior IDH e os desembolsos para os mesmos</span></em></strong></p><p><img src="./img/7.maior_idh.png" referrerpolicy="no-referrer">
+<img src="./img/7.des_maior_idh.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><strong><em><span>Série temporal dos estados com menor IDH e os desembolsos para os mesmos</span></em></strong></p><p><img src="./img/8.menor_idh.png" referrerpolicy="no-referrer">
+<img src="./img/8.des_menor_idh.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><h1 id='4-machine-learning-aprendizado-não-supervisionado-e-a-relação-de-processos-judiciais'><span>4. Machine Learning: Aprendizado não supervisionado e a relação de processos judiciais.</span></h1><p>&nbsp;</p><p><span>Nesta seção procurou-se explorar a correlação observada entre os processos judiciais das empresas com o  financiamento do BNDES. Conforme comentado na sub-seção 3.1,  é esperado que empresas maiores façam empréstimos maiores, e  que essas empresas tenham mais processos que empresas menores. Buscou-se evidenciar se isso realmente ocorre, ou se existem padrões diferentes relacionados a empresas com mais processos judiciais.</span></p><p>&nbsp;</p><h2 id='41-relação-dos-financiamentos-do-bndes-com-a-quantidade-de-processos-judiciais-das-empresas'><span>4.1 Relação dos Financiamentos do BNDES com a quantidade de processos judiciais das empresas</span></h2><p>&nbsp;</p><p><span>O primeiro ponto a ser explorado foi uma análise bivariada do valor do financiamento com a quantidade de processos judiciais, através de um gráfico de dispersão.</span></p><p>&nbsp;</p><p><img src="./img/processos.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observa-se uma relação positiva entre os processos de uma empresa e o financiamento, indicando que em média, quanto mais processos a empresa tem, maior o valor do financiamento.</span></p><p><span>A primeira hipótese deste comportamento foi a de que essa tendência pode estar sendo puxada pelo governo, que é um cliente grande e provavelmente tem muitos processos. Para checar se este é o caso, foi plotado o gráfico de dispersão para cada natureza de cliente disponível nos dados.</span></p><p>&nbsp;</p><p><img src="./img/processos_segmentos.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Prontamente verifica-se que são os clientes de empresas privadas e de administração pública que puxam esta tendência, já o governo parece não ter nenhum tipo de relação com o número de processos.</span></p><p>&nbsp;</p><p><span>Também plotou-se a relação do número de processos com o prazo de amortização, para verificar a correlação negativa observada no heatmap.</span></p><p>&nbsp;</p><p><img src="./img/processosxamortizacao.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Parece haver um relação negativa entre o prazo de amortização e os processos judicias da empresa. </span></p><p><span>Na seção abaixo tentaremos entender como essas informações se conectam, através de algoritmos de Machine Learning.</span></p><p>&nbsp;</p><h2 id='42-clusterização-por-k-prototypes'><span>4.2 Clusterização por K-Prototypes</span></h2><p>&nbsp;</p><p><span>Com o objetivo de evidenciar padrões não observadas na análise exploratória, foi proposto um método de aprendizado não supervisionado para clusterizar as empresas que fazem financiamentos com o BNDES.</span></p><p><span>O método mais comum de clusterização é o K-means, porém o mesmo só é eficiente para amostrar com dados estritamente numéricos, pois a função de custo é calculada através da distância entre pontos, com a distância euclidiana sendo a mais comum. </span></p><p><span>Outra opção muito aceita é o Kmodes, porém o mesmo só é eficiente com dados categóricos. No caso dos dados deste estudo, temos uma combinação de dados numéricos com dados categóricos.</span></p><p><span>Para lidar com problemas deste tipo, um método proposto e bastante aceita na literatura foi o de Huang (1998). O método proposto, chamado de K-Prototypes, é um método de clusterização baseado em particionamento. O </span><em><span>paper</span></em><span> original do método pode ser consultado em: </span><a href='https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.15.4028&amp;rep=rep1&amp;type=pdf' target='_blank' class='url'>https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.15.4028&rep=rep1&type=pdf</a></p><p>&nbsp;</p><p><span>Neste estudo foi utilizado o método proposto no trabalho, através do módulo kprototypes do pacote kmodes.</span></p><p><span>Os dados foram agrupados a nível de cliente, com o objetivo de observar grupos distintos de clientes e verificarmos se o número de processos destes grupos apresenta alguma informação relevante para o BNDES. Devido a isso, só foi possível utilizar algumas variáveis que representam o cliente e não estão agrupadas a outros níveis, como tipo do contrato ou as variáveis extras coletadas no estudo. Além disso, foram selecionadas as melhores variáveis de acordo com as relações observadas durante a análise exploratória, resultando no seguinte conjunto final de variáveis para a clusterização: [uf, produto, fonte_de_recursos_desembolso, setor_bndes, natureza_do_cliente, tipo_de_garantia, valor_desembolsado_ajustado, processos, prazo_de_amortizacao_meses]</span></p><p><span>Também foram separadas apenas os clientes com porte_do_cliente Grande, pois são o grupo de clientes com maior quantidade de observações no dataset e com características de financiamento distintas dos outros portes de cliente.</span></p><p><span>Para usar este método, estas variáveis precisam ser normalizadas. Para realizar a normalização dos dados, foi utilizado o módulo PowerTransformer do pacote sklearn.preprocessing. O método de normalização que mais se ajustou aos dados foi método &#39;box-cox&#39;. Este método requer dados estritamente positivos, por isso as observações de 245 empresas que tinham 0 processos foram trocadas para 1 processo. Essa mudança não alterou a clusterização, e visto a função de distribuição dos processos por empresa, também não enviesou as análises.</span></p><p>&nbsp;</p><p><span>Para determinar o número ótimo de Cluster, foi utilizado o método </span><em><span>Elbow</span></em><span>, que retornou um número ótimo de 3 clusters. </span></p><p><img src="./img/elbow2.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>A clusterização retornou os seguintes grupos:</span></p><ul><li><span>0: 789 clientes</span></li><li><span>1: 568 clientes</span></li><li><span>2: 513 clientes</span></li></ul><p><span>A relação das variáveis numéricas destes clusters foram plotadas na imagem abaixo.</span></p><p><img src="./img/clusters_adjusted.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Observou-se que existem três padrões distintos de valores de financiamento, número de processos e prazo médio de amortização.</span></p><ul><li><span>O grupo 0 tem a maior média de financiamentos, maior média de processos jurídicos e um prazo de amortização que está no meio entre o grupo 1 e 2.</span></li><li><span>O grupo 1 tem uma média de financiamentos que fica entre o grupo 0 e 2, inclusive apresentando uma distribuição normal de financiamentos. Tem a menor média de processos e o maior prazo de amortização.</span></li><li><span>O grupo 2 tem a menor média de financiamentos, menor prazo de amortização e fica entre os outros dois grupos no número médio de processos.</span></li></ul><p>&nbsp;</p><p><span>Antes de levantar hipóteses sobre este comportamento, é necessário verificar a validade do modelo. </span></p><p><span>A forma mais aceita para verificar se os clusters propostos aqui são de fato distintos e apresentam características diferentes é a de adicionar uma feature com a classificação do cluster nos dados e criar um modelo que prevê de qual cluster a observação é. </span></p><p><span>Se os clusters forem significativos e distintos, o modelo deve ser capaz de prever com precisão qual cluster a observação pertence.</span></p><p><span>O modelo proposto neste estudo foi o LightGBM, um framework desenvolvido pela Microsoft que usa algoritmos de aprendizado baseados em classificadores em árvore.  A documentação e instalação do LightGBM pode ser conferida aqui: </span><a href='https://github.com/microsoft/LightGBM' target='_blank' class='url'>https://github.com/microsoft/LightGBM</a></p><p><span>Foi utilizado o método de validação pro </span><em><span>cross validation</span></em><span> do pacote sklearn.model_selection com o método de scoring F1.</span></p><p><span>O modelo obteve um score de 96.52%, indicando que os clusters são de alta qualidade. A saída da validação e todo o algoritmo usado pode ser conferido no github do estudo.</span></p><p>&nbsp;</p><p><span>Após a validação, usou-se o Shap, que é uma abordagem de teoria de jogos que busca interpretar a saída dos algoritmos de Machine Learning. A abordagem conecta a alocação ótima com uma explicação local usando os clássicos valores Shapley da teoria dos jogos.</span></p><p><span>O repositório do pacote está disponível em: </span><a href='https://github.com/slundberg/shap' target='_blank' class='url'>https://github.com/slundberg/shap</a></p><p><span>Foi utilizado o módulo TreeExplainer para interpretar a saída do modelo. O paper sobre o método está disponível em: </span><a href='https://www.nature.com/articles/s42256-019-0138-9' target='_blank' class='url'>https://www.nature.com/articles/s42256-019-0138-9</a></p><p><img src="./img/shap_adjusted.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p><span>Notamos que os classificadores mais importantes para os clusters foram os valores do desembolso, o prazo de amortização e o número de processos judiciais.</span></p><p><span>O setor teve alguma importância para a classificação, já as outras variáveis foram de pouca importância.</span></p><h3 id='421-diferenças-entre-grupos-clusterizados'><span>4.2.1 Diferenças entre grupos clusterizados</span></h3><p><span>Nesta sub-seção serão apresentadas algumas das diferenças de características observadas dentro de cada cluster.</span></p><p>&nbsp;</p><ul><li><p><strong><span>Valor do financiamento</span></strong></p><ul><li><img src="./img/med_fin.jpg" referrerpolicy="no-referrer"></li></ul></li></ul><p><span>Observa-se que o financiamento médio do grupo 0 é 5 vezes maior do que do grupo 1, e mais de 30 vezes a média do grupo 2.</span></p><p><span>Isto indica que temos um grupo de empresas que fazem financiamentos gigantescos, um grupo de financiamentos menos acentuado e um grupo de pequenos financiamentos.</span></p><p>&nbsp;</p><ul><li><p><strong><span>Processos Judiciais</span></strong></p><ul><li><img src="./img/med_procs.jpg" referrerpolicy="no-referrer"></li></ul></li></ul><p><span>  A média do grupo 0 é muito maior que a dos outros grupos, é particularmente notável a diferença entre o grupo 0 e grupo 1.</span></p><p><span>  </span><strong><span>Essa diferença é um ponto muito interessante, pois as empresas do grupo 1 também são mega empresas capazes de fazer financiamentos médios de 110 milhões, porém as mesmas quase não tem processos judiciais registrados. Esse ponto pode ser explorado em trabalhos futuros, pois as empresas do cluster 1 podem estar trazendo mais benefícios a sociedade brasileira do que as empresas do cluster 0, que fazem empréstimos muito maiores porém tem em média, mais de 150 vezes o número de processos judiciais.</span></strong></p><p><span>  </span></p><ul><li><p><strong><span>Prazo de amortização</span></strong></p><ul><li><img src="./img/med_amort.jpg" referrerpolicy="no-referrer"></li></ul></li></ul><p><span>  A média do prazo de amortização para o grupo 1 é a maior, enquanto a pro grupo 0 é próxima a média do grupo 2.</span></p><p><span>  </span><strong><span>Também nota-se um ponto muito importante aqui. As empresas do cluster 2, por terem pequenos financiamentos, tem pouco prazo para a amortização. Já as empresas do cluster 0, tem um prazo semelhante para amortizar financiamentos em média mais de 15 vezes maiores. É possível que o BNDES esteja captando algum risco associado a estas empresas na hora da contratação, e oferecendo condições menos vantajosas. Já as empresas do cluster 1, que tem poucos processos, tem um prazo de amortização muito maior, sendo provavelmente o grupo de empresas com características ideais de risco.</span></strong></p><p><span>  </span></p><ul><li><p><strong><span>Estados</span></strong></p><ul><li><img src="./img/estados.jpg" referrerpolicy="no-referrer"></li></ul></li></ul><p>&nbsp;</p><p><strong><span>Nos estados, nota-se que empresas do cluster 1 são de estados totalmente diferentes. Talvez estes estados estejam associados a empresas que devolvem mais recursos a sociedade.</span></strong></p><p><strong><span>O cluster 0, que parece ser o cluster crítico, tem muitas empresas Inter estaduais e do Rio de Janeiro, talvez exista alguma tendência de risco associada a estes estados.</span></strong></p><p>&nbsp;</p><ul><li><p><strong><span>Produtos</span></strong></p><ul><li><img src="./img/produtos.jpg" referrerpolicy="no-referrer"></li></ul></li></ul><p>&nbsp;</p><p><span>Nota-se que as empresas do cluster 1, que parece ser o cluster com melhores condições, estão menos acumuladas no BNDES FINEM e mais dispersas em BNDES PROJECT FINANCE e BNDES EMPRÉSTIMO PONTE.</span></p><p>&nbsp;</p><ul><li><p><strong><span>Setor BNDES</span></strong></p><ul><li><img src="./img/setor.jpg" referrerpolicy="no-referrer"></li></ul></li></ul><p>&nbsp;</p><p><span>As empresas do cluster 1 estão mais agregadas no setor de Infraestrutura, enquanto as empresas do cluster 0 parecem estar dispersas entre Infraestrutura e Industria.</span></p><ul><li><strong><span>Garantia</span></strong></li><li><img src="./img/garantia.jpg" referrerpolicy="no-referrer"></li></ul><p>&nbsp;</p><p><span>Não parece haver uma distinção de garantia entre as empresas do cluster 2 e 0, embora exista uma distinção clara entre as duas quanto ao valor dos financiamentos.</span></p><p><span>Já as empresas do cluster 1 parecem tender mais a usar o real/pessoal como garantia, indicando mais uma característica diferente dos demais clusters.</span></p><p>&nbsp;</p><p><strong><span>A base de dados com o label de clusters está disponível no dataset: &#39;cluster_labeled&#39; no GitHub do projeto.</span></strong></p><h1 id='5-conclusões'><span>5. Conclusões</span></h1><p><span>Várias conclusões com impactos para sociedade e para as políticas públicas podem ser derivadas dos resultados aqui apresentados. </span></p><p><span>Por exemplo, nota-se que existe um incentivo de custo de oportunidade para empresas que conseguem financiar maiores valores, indicando um incentivo a grandes empresas se financiarem. É necessário considerar a possibilidade de se investigar o caso das pequenas e médias empresas, uma vez que elas representam 70% dos postos de trabalho da América Latina e serão mais impactadas pela transformação digital. Informação disponível em: </span><a href='https://www.oecd-ilibrary.org/development/latin-american-economic-outlook-2020_e6e864fb-en#:~:text=' target='_blank' class='url'>https://www.oecd-ilibrary.org/development/latin-american-economic-outlook-2020_e6e864fb-en#:~:text=</a></p><p><span>Também existe um grupo de clientes que faz super financiamentos,mas este grupo tem uma grande média de processos e podem representar empresas de risco ou que não impactam em desenvolvimento sustentável (social e ambientalmente). O BNDES parece ser capaz de captar este risco, pois este grup ode financiamentos tem um baixo prazo de amortização. Talvez seja interessante que o BNDES analise a situação jurídica das empresas e observar este ponto também para formar sua proposta de financiamento.</span></p><p><span>Um terceiro ponto, é que existe um grupo de clientes que faz financiamentos altos, com média de 110 milhões, que tem uma média de processos judiciais baixíssima (21). O BNDES parece ser capaz de identificar esta característica e oferece boas condições de prazo para estes clientes. Pode ser uma oportunidade fazer um trabalho mais profundo para observar quem são estes clientes, e direcionar financiamentos para eles e promover que as boas práticas destes sejam adotadas pelos demais. No trabalho atual, conseguimos identificar que estes clientes estão mais concentrados no setor da infraestrutura, no estado de Bahia, Rio Grande do Norte e Rio Grande do Sul. </span></p><p><span>Especificamente para o produto BNDES FINEM, parece haver uma tendência de que maiores valores de financiamento estão associados a um menor nível de emissão de CO2. A indústria do MG parece ser um local que o BNDES poderia direcionar incentivos do produto FINEM, visto que é o maior emissor do país e vem requisitando poucos incentivos ao longo dos últimos anos. Além disso, a diminuição da emissão de CO2 não se correlacionaram com a diminuição do PIB da indústria, indicando que este é um ponto importante para o BNDES apontar para os seus clientes, ao incentivar as indústrias a diminuírem seus níveis de emissão. </span></p><p><span>A agropecuária de Mato Grosso, Pará e Rondônia são os maiores responsáveis por emissão de CO2 de todo o país, e quase não há financiamento para os mesmos. É importantíssimo que o BNDES consiga direcionar o produto BNDES FINEM para a agropecuária destes estados. Também parece que o setor agropecuário de Minas Gerais apresenta uma boa oportunidade de incentivo, que ainda é pouco explorado. Consequentemente, parece que o produto BNDES FINEM tem um bom direcionamento para objetivos sustentáveis. Essa é uma relação que pode ser estudada com maior detalhamento em trabalhos futuros. </span></p><p><span>Além disso, no estado de São Paulo, também se observou um grande volume de financiamento do BNDES (como um todo, não apenas FINEM) que diminuíram ao mesmo tempo que as emissões de CO2 do estado também diminuíram. É possível imaginar que os grandes aportes iniciais do BNDES contribuíram para a posterior redução de emissões. Dessa forma, parece haver a possibilidade de que os financiamentos do BNDES contribuíram para este efeito, e este é um ponto que vale a pena um estudo mais profundo de inferência de causalidade.</span></p><p><span>Finalmente, sugerimos para trabalhos futuros, juntar as bases de financiamentos automáticos e não automáticos para entender melhor a relação do financiamento com a evolução do IDH.</span></p></div></div>
+</body>
+</html>

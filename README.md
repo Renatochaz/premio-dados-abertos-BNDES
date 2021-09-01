@@ -11,7 +11,6 @@ O Prêmio Dados Abertos para o Desenvolvimento tem como objetivos:
 - desenvolver estudos, análises e soluções de empreendedorismo tecnológico para problemas complexos e desafios que contribuam para o aprimoramento e a modernização da gestão pública.
 
   [Edital do Concurso](https://www.bndes.gov.br/wps/wcm/connect/site/4af22351-97ad-4163-9c6c-15a8406591ed/Edital+Maratona+BNDES+vers%C3%A3o+final.pdf?MOD=AJPERES&CVID=nFujLIl)
-  
 
 
 
@@ -53,7 +52,7 @@ Nosso projeto teve como objetivo atuar no pilar da transparência, da efetividad
 
 **Equipe**
 
-**Msc. Renato Martins Chavez** - https://www.linkedin.com/in/renato-chavez/
+Msc. Renato Martins Chavez - https://www.linkedin.com/in/renato-chavez/
 
 PhD. Isotilia Costa Melo - https://www.linkedin.com/in/isotilia-costa-melo-phd-49657211/
 
@@ -63,11 +62,7 @@ PhD. Paulo Nocera Alves Junior - https://www.linkedin.com/in/paulonocera/
 
 Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
 
-
-
-**Pitch**
-
-- [Pitch Time 8](https://www.youtube.com/watch?v=e_A6jZoBxyk)
+**Pitch** - [Vídeo Time 8](https://www.youtube.com/watch?v=e_A6jZoBxyk)
 
 
 
@@ -75,17 +70,12 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
 
 - Visualização
   - [Python](https://www.python.org/)
-  
-  - [Tableau](https://www.tableau.com/)
-  
+  - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML#:~:text=HTML%20(HyperText%20Markup%20Language)%20is,and%20structure%20of%20web%20content.&text=HTML%20uses%20%22markup%22%20to%20annotate,display%20in%20a%20Web%20browser.)
   - [JavaScript](https://www.javascript.com/)
-  
   - [Matlab](https://www.mathworks.com/products/matlab.html)
-  
+  - [Tableau](https://www.tableau.com/)
   - [Seaborn](https://seaborn.pydata.org/)
-  
   - [Matplotlib](https://matplotlib.org/)
-  
   - [Dython](http://shakedzy.xyz/dython/)
   
 - Engenharia e análise de dados
@@ -154,3 +144,8 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
     - [Análise Exploratória](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/EDA.ipynb)
     - [Análise Exploratória pt.2](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/EDA-2.ipynb)
     - [Aprendizado não supervisionado](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/Cluster-analysis.ipynb)
+
+
+
+- Site compiler
+  - 

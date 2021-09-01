@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+    
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    </style>
+
+  <script>
+    // Page init event
+    ons.disableAutoStyling();
+
+    window.fn = {};
+
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+    function loadpage(url){
+    $('#mycontent').load(url);
+
+    }
+
+    
+    document.addEventListener('init', function(event) {
+      
+      var page = event.target;
+
+      if (page.matches('#first-page')) {
+
+        page.querySelector('#dashboards').onclick = function() {
+          document.querySelector('#navigator').pushPage('page2.html');
+        };
+
+
+        page.querySelector('#eficiencia').onclick = function() {
+          document.querySelector('#navigator').pushPage('page3.html');
+        };
+
+        page.querySelector('#cluster').onclick = function() {
+          document.querySelector('#navigator').pushPage('page4.html');
+        };
+
+
+        page.querySelector('#social').onclick = function() {
+          document.querySelector('#navigator').pushPage('page5.html');
+        };
+
+        page.querySelector('#relatorio').onclick = function() {
+          document.querySelector('#navigator').pushPage('page6.html');
+        };
+
+
+
+        page.querySelector('#video').onclick = function() {
+          document.querySelector('#navigator').pushPage('page7.html');
+        };
+
+      } else if (page.matches('#second-page')) {
+
+        page.querySelector('#pop-button').onclick = function() {
+          document.querySelector('#navigator').popPage();
+        };
+
+      }
+    });
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+
+
+  </script>
+</head>
+<body>
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+
+  <ons-template id="page1.html">
+    <ons-page id="first-page">
+      <ons-toolbar>
+        <div class="center">Time 8</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        
+        <ons-list>
+        <ons-list style="background: transparent;">
+        <ons-list-header>Análise BNDES Eficiente</ons-list-header>
+        <ons-list-item id="video" tappable ><ons-icon icon="fa-video" class="list-item__icon"></ons-icon>Apresentação</ons-list-item>
+        <ons-list-item tappable id="github" onclick="window.open('https://github.com/Renatochaz/premio-dados-abertos-BNDES','_blank')"><ons-icon icon="fa-github" class="list-item__icon"></ons-icon>Github</ons-list-item>
+        <ons-list-item id="dashboards" tappable ><ons-icon icon="fa-dashboard" class="list-item__icon"></ons-icon>Dashboards</ons-list-item>
+        <ons-list-item id="eficiencia" tappable><ons-icon icon="fa-line-chart" class="list-item__icon"></ons-icon>Análise de Eficiência</ons-list-item>
+        <ons-list-item id="cluster" tappable><ons-icon icon="fa-braille" class="list-item__icon"></ons-icon>Análise de Clusters</ons-list-item>
+        <ons-list-item id="social" tappable><ons-icon icon="fa-user-circle-o" class="list-item__icon"></ons-icon>Social Network Analysis</ons-list-item>
+        <ons-list-item id="relatorio" tappable><ons-icon icon="file-text-o" class="list-item__icon"></ons-icon>Relatório Final</ons-list-item>        
+        
+        </ons-list>
+
+       
+      </div>
+
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="page2.html">
+    <ons-page id="second-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+        <div class="center">Dashboards</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <div class="container"> 
+          <iframe class="responsive-iframe" src="https://public.tableau.com/app/profile/j.ssica.syrio.callefi"></iframe>
+        </div>
+        
+
+      
+     
+                
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+
+  <ons-template id="page3.html">
+    <ons-page id="third-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+        <div class="center">Análise de Eficiência</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: left; padding: 20px;">
+        
+        <h3>Análise de Eficiência</h3>
+
+<p>Para a análise da eficiência, foi utilizada a ferramenta Análise Envoltória de Dados, a DEA. Especificamente, o modelo Slack-Based Model.  Também usamos a técnica Benefit of Doubt e o índice Malmquist, para entender a evolução temporal da eficiência."
+Trabalhos com os outputs: desembolso, empregos, IDH e PIB.  Output significa foco na maximização. Emissões foi considerada um output indesejável, portanto, o modelo focou na sua minimização.</p>
+<p>Para medir a eficiência, trabalhamos com anos de 2010 e 2017, desconsiderando os estados que não tinham desembolso nesses anos. Isso pode ser verificado na visualização.</p>
+<p>Os resultados mostraram que:</p>
+<ol>
+<li>Rio Grande do Sul, São Paulo e Santa Catarina foram eficientes em ambos os anos. Porém, em 2017, seu desempenho foi inferior a 2010.</li> 
+<li>Bahia, Pernambuco e Rio de Janeiro fizeram parte da fronteira de eficientes em 2017. A Bahia aumentou o IDH e Pernambuco reduziu emissões.</li>
+<li>Paraná, Goiás e Minas Gerais ainda não alcançaram a fronteira de eficientes. Porém, seu desempenho foi melhor em 2017 do que em 2010. Paraná aumentou o PIB. Goiás reduziu emissões e aumentou os empregos.</li>
+<br>        
+<div align="center">
+<img src="img/eficiencia.png" width="80%">        
+</div>
+<br>        
+<div align="center">
+  <img src="img/eficiencia.jpeg" width="80%">        
+  </div>
+
+        
+
+      
+     
+                
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+  <ons-template id="page4.html">
+    <ons-page id="forth-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+        <div class="center">Clusters</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <div class="container"> 
+          <iframe class="responsive-iframe" src="relatorio_cluster.html"></iframe>
+        </div>
+        
+
+      
+     
+                
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+
+  <ons-template id="page6.html">
+    <ons-page id="sixth-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+        <div class="center">Relatório Final</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <div class="container"> 
+          <iframe class="responsive-iframe" src="Relatorio_analises.html"></iframe>
+        </div>
+        
+
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+
+  <ons-template id="page7.html">
+    <ons-page id="seventh-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+        <div class="center">Apresentação</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+        <div class="container"> 
+          <iframe class="responsive-iframe" src="https://www.youtube.com/embed/e_A6jZoBxyk"></iframe>
+        </div>
+        
+
+      
+     
+                
+      </div>
+    </ons-page>
+  </ons-template>
+
+
+
+  <ons-template id="page5.html">
+    <ons-page id="fifth-page">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+        <div class="center">Social Network Analysis</div>
+      </ons-toolbar>
+
+      <div class="content" style="text-align: center">
+      
+  <h3>Nome do Sócio e o total de empresas dele que receberam crédito do BNDES</h3>
+  <ons-select modifier="underbar" id="choose-sel" onchange="document.getElementById('socios').src = this.options[this.selectedIndex].value"">
+    <option value="1.html">YUEHUI PAN - 32</option>
+    <option value="2.html">JOSE LUIZ JANSSON LAYDNER - 29</option>
+    <option value="3.html">ALBERTO DOS SANTOS LOPES - 28</option>
+    <option value="4.html">CARLOS GUSTAVO NOGARI ANDRIOLI - 23</option>
+    <option value="5.html">KLEBER RIBEIRO COSENZA - 22</option>
+    <option value="6.html">NILTON LEONARDO FERNANDES DE OLIVEIRA - 21</option>
+    <option value="7.html">THIAGO TRINDADE LINHARES - 20</option>
+    <option value="8.html">PATRICIA FABIANA BARBOSA PINTO FARRAPEIRA MULLER - 20</option>
+    <option value="9.html">CARLOS FERNANDO BANDEIRA HOLME - 20</option>
+    <option value="10.html">GUSTAVO FISCHER SBRISSIA - 20</option>
+    <option value="11.html">FREDERICO FERREIRA SARMENTO - 16</option>
+    <option value="12.html">FERNANDO MANO DA SILVA - 16</option>
+    <option value="13.html">CESAR AUGUSTO CONSERVANI - 16</option>
+    <option value="14.html">ADRIANO MARTINS VIGNOLI - 14</option>
+    <option value="15.html">LAURA CRISTINA DA FONSECA PORTO - 14</option>
+    <option value="16.html">RODOLFO FERNANDES DA ROCHA - 14</option>
+    <option value="17.html">LEANDRO ADZGAUSKAS MONTANHER - 14</option>
+    <option value="18.html">MARIANE CARVALHO MEDEIROS - 14</option>
+    <option value="19.html">LUIS FERNANDO MENDONCA DE BARROS FILHO - 14</option>
+    <option value="20.html">MARGOT FROTA COHN PIRES - 14</option>
+    <option value="21.html">FILIPE ALVES DOMINGUES - 14</option>
+    <option value="22.html">MARCOS FERREIRA MEIRELES - 13</option>
+    <option value="23.html">CLAUDIO DE ARAUJO FERREIRA - 13</option>
+    <option value="24.html">LIU GONCALVES DE AQUINO - 13</option>
+    <option value="25.html">ALEXANDRE LIMA NOGUEIRA - 13</option>
+    <option value="26.html">EDGARD CORROCHANO - 13</option>
+    <option value="27.html">LARA MONTEIRO DA SILVA - 13</option>
+    <option value="28.html">ANTONIO AUGUSTO TORRES DE BASTOS FILHO - 12</option>
+    <option value="29.html">ANDREA SZTAJN - 12</option>
+    <option value="30.html">PAULO ALEXANDRE COELHO ABRANCHES - 12</option>
+    <option value="31.html">MAURICIO PEREZ BOTELHO - 12</option>
+    <option value="32.html">LEONARDO SOARES WALTER - 11</option>
+    <option value="33.html">CARLOS RANDOLPHO GROS - 11</option>
+    <option value="34.html">MARCELO FABIANO DA SILVA - 11</option>
+    <option value="35.html">SUISHENG HUANG - 11</option>
+    <option value="36.html">GABRIEL LUACES FERNANDEZ - 11</option>
+    <option value="37.html">DILNEY CHAVES CABRAL FILHO - 10</option>
+    <option value="38.html">PAULO DE TARSO DA COSTA - 10</option>
+    <option value="39.html">NEWTON SOUZA DE MORAES - 10</option>
+    <option value="40.html">MARCIO TEIXEIRA TRANNIN - 10</option>
+    <option value="41.html">DANIEL EDUARDO ARAQUE PRADA - 10</option>
+    <option value="42.html">VIVIANE DE OLIVEIRA SOARES - 10</option>
+    <option value="43.html">GUSTAVO FLORENTINO RIBEIRO - 10</option>
+    <option value="44.html">LEONARDO PIMENTA GADELHA - 10</option>
+    <option value="45.html">JORGE RAUL BAUER - 9</option>
+    <option value="46.html">DANIELE ARAUJO SALOMAO CASTELO - 9</option>
+    <option value="47.html">RAMON SADE HADDAD - 9</option>
+    <option value="48.html">ROBERTO MARIO DI NARDO - 9</option>
+    <option value="49.html">ANDRE FLORES RODRIGUES - 9</option>
+    <option value="50.html">ALEXANDRE NOGUEIRA FERREIRA - 8</option>
+  </ons-select>
+
+  
+      
+       
+       <div class="container"> 
+          <iframe id="socios" class="responsive-iframe" src="1.html"></iframe>
+        </div>
+       
+
+      
+     
+                
+      </div>
+    </ons-page>
+  </ons-template>
+
+</body>
+</html>
