@@ -219,7 +219,7 @@ Pela estatística descritiva da variável, perceba-se que a variável principal 
 
 Plotando a função densidade de probabilidade, nota-se uma distribuição não normal com forte assimetria positiva, e características distintas entre o porte do cliente que fez o empréstimo.
 
-![](.\img\graph_fdp_outliers.png)
+![](img/graph_fdp_outliers.png)
 
 
 
@@ -227,19 +227,19 @@ Devido a grande influência de outliers, os dados de financiamento são winsoriz
 
 Uma análise descritiva dos dados winsorizados demonstra uma grande melhora no comportamento da variável:
 
-![](.\img\desc_winsorizado.jpg)
+![](img/desc_winsorizado.jpg)
 
 
 
 Plotando a f.d.p, percebe-se uma suavização da distribuição e nota-se com mais clareza a distinção entre o grupo de empresas grandes do resto. 
 
-![](.\img\graph_fdp.png)
+![](img/graph_fdp.png)
 
 
 
 ### 3.1.2. Relação com variáveis categóricas
 
-![](.\img\box_setor.png)
+![](img/box_setor.png)
 
 
 
@@ -249,13 +249,13 @@ Observamos uma distinção do comportamento do financiamento para os diferentes 
 
 Mesmo com a winsorização, a presença de outliers é evidente.
 
-![](.\img\box_natureza.png)
+![](img/box_natureza.png)
 
 
 
 **A relação do financiamento com a natureza do cliente também parece ser bem distinta, com o maior valor médio de contrato indo as empresas públicas indiretas e para o governo estadual.**
 
-![](.\img\box_estado.png)
+![](img/box_estado.png)
 
 
 
@@ -272,19 +272,19 @@ Nesta seção iremos analisar apenas a relação com as variáveis numéricas do
 
 *Cabe notar que a sequência de pontos contínuos nas caudas dos gráficos vem do método de winsorização utilizado para lidar com outliers.*
 
-![](.\img\juros.png)
+![](img/juros.png)
 
 
 
 Parece haver uma relação negativa entre o valor do financiamento e os juros, indicando que maiores valores de financiamento estão associados a condições melhores de pagamento.
 
-![](.\img\carencia.png)
+![](img/carencia.png)
 
 
 
 Parece haver uma relação positiva entre o valor do financiamento e os prazo de carência, indicando que maiores valores de financiamento estão associados a condições melhores de pagamento.
 
-![](.\img\amortizacao.png)
+![](img/amortizacao.png)
 
 Parece haver uma relação positiva entre o valor do financiamento e o prazo de amortização, indicando que maiores valores de financiamento estão associados a condições melhores de pagamento.
 
@@ -304,7 +304,7 @@ Para calcular as correlações, o dataset foi agrupado a nível de setor, ano e 
 
 Pontuado estes pontos, vamos as correlações:
 
-![](.\img\heatmap_adj.png)
+![](img/heatmap_adj.png)
 
 - **Valor_desembolsado_ajustado:**
 
@@ -332,7 +332,7 @@ Também estamos interessados em observar as correlações para a quantidade de p
 
 
 
-![](.\img\heatmap_processos.png)
+![](img/heatmap_processos.png)
 
 - **Processos judiciais:**
 
@@ -361,7 +361,7 @@ Neste tópico é feita uma análise gráfica de séries temporais, com o objetiv
 
 Primeiro vamos observar a tendência de emissões em relação ao financiamento do BNDES  de modo geral:
 
-![](.\img\emissao.png)
+![](img/emissao.png)
 
 
 
@@ -371,7 +371,7 @@ O BNDES tem o produto BNDES FINEM, que entre outros instrumentos financeiros, en
 
 Filtrou-se o dataset para os produtos BNDES FINEM e plotou-se a mesma relação:
 
-![](.\img\emissao_finem.png)
+![](img/emissao_finem.png)
 
 
 
@@ -381,7 +381,7 @@ Aparentemente, entre o grupo de empresas que optam por produtos BNDES FINEM, des
 
 Agora, filtrando o dataset para produtos que **não** sejam do BNDES FINEM, observamos a seguinte tendência:
 
-![](.\img\emissao_semfinem.png)
+![](img/emissao_semfinem.png)
 
 
 
@@ -401,7 +401,7 @@ Embora **fazer uma análise para cada estado seja uma boa oportunidade de atuaç
 
 
 
-![](.\img\1.emiss_ind.png)
+![](img/1.emiss_ind.png)
 
 
 
@@ -411,7 +411,7 @@ Minas Gerais parece estar aumentando sua emissão ao longo dos anos, enquanto S�
 
 
 
-![](.\img\1.des_ind_emiss.png)
+![](img/1.des_ind_emiss.png)
 
 
 
@@ -427,7 +427,7 @@ Minas Gerais parece estar aumentando sua emissão ao longo dos anos, enquanto S�
 
   No estado de São Paulo observou-se um grande volume de financiamento do BNDES, que veio diminuindo ao mesmo tempo que as emissões de CO2 do estado também diminuíram. Parece haver a possibilidade de que os financiamentos do BNDES contribuíram para este efeito, e **este é um ponto que vale a pena um estudo mais profundo de inferência de causalidade.**
 
-![](.\img\3.pib_ind.png)
+![](img/3.pib_ind.png)
 
 
 
@@ -445,7 +445,7 @@ Porém, o maior PIB da indústria é do estado de São Paulo, que se mantém mui
 
 Utilizando a mesma estratégia da análise pro setor industrial, nesta sub-seção procurou-se analisar como as emissões de CO2 do setor da agropecuária se relacionam com os financiamentos do BNDES.
 
-![](.\img\2.emis_agro.png)
+![](img/2.emis_agro.png)
 
 
 
@@ -453,7 +453,7 @@ Observa-se que os maiores emissores são o estado do Mato Grosso, seguido do Par
 
 Os três estados parecem estar diminuindo os níveis de emissão ao longo do tempo, porém cabe destacar que pelo que foi observado pelo gráfico do SEEG e pela escala de emissão deste gráfico, que as emissões da agropecuária são muito maiores que as da indústria.
 
-![](.\img\2.des_emis_agro.png)
+![](img/2.des_emis_agro.png)
 
 
 
@@ -467,13 +467,13 @@ O estado do Pará teve pouquíssimos financiamentos entre 2007 e 2012 e Rondôni
 
 Levando em conta que estes estados são os maiores responsáveis pela emissão de CO2 **total do Brasil**, levanta-se aqui a sugestão que o BNDES **direcione financiamentos, principalmente do produto FINEM para estados com urgência, pois existe uma grande oportunidade de atuação.**
 
-![](.\img\4.pib_agro.png)
+![](img/4.pib_agro.png)
 
 
 
 Observando os estados com maior PIB da agropecuária brasileira, notamos que eles não são os estados responsáveis pelo maior volume de emissões de CO2, conforme o gráfico abaixo:
 
-![](.\img\4.des_emis_pib_agro.png)
+![](img/4.des_emis_pib_agro.png)
 
 
 
@@ -481,7 +481,7 @@ As emissões de CO2 destes estados está em uma escala dez vezes menor do que a 
 
 
 
-![](.\img\4.des_pib_agro.png)
+![](img/4.des_pib_agro.png)
 
 
 
@@ -511,7 +511,7 @@ Usou-se este formato para analisar o comportamento dos financiamentos do BNDES p
 
 
 
-![](.\img\pib.png)
+![](img/pib.png)
 
 Neste gráfico de dispersão observamos uma relação positiva acentuada para os financiamentos do BNDES em relação ao PIB dos estados. 
 
@@ -519,7 +519,7 @@ Este gráfico sugere que estados mais ricos recebam um volume total maior de fin
 
 
 
-![](.\img\empregos.png)
+![](img/empregos.png)
 
 A tendência observada para o PIB é a mesma para a quantidade de empregos, o que é esperado, já que maiores PIBS estão altamente correlacionados a maior número de empregos.
 
@@ -535,13 +535,13 @@ Os dados da quantidade de empregos foram agrupados a nível de setor, resultando
 
 
 
-![](.\img\5.emp_ind.png)
+![](img/5.emp_ind.png)
 
 Nota-se que embora SP e MG continuem aparecendo com maiores estados da Indústria, o estado do Rio grande do Sul substituir o estado do Rio de Janeiro nesta seção, pois embora a indústria do RS tenha um PIB menor, este estado tem maior quantidade de empregos.
 
 
 
-![](.\img\5.des_emp_ind.png)
+![](img/5.des_emp_ind.png)
 
 **Analisando graficamente o desembolso para o estado do RS, parece haver uma similaridade com os desembolsos para o estado do RJ. Isto indica que a tendência de maior volume de financiamentos para estados mais ricos é a mesma, usando tanto o PIB quanto número de empregados como *proxy* para riqueza.**
 
@@ -557,13 +557,13 @@ Os dados da quantidade de empregos foram agrupados a nível de setor, resultando
 
 
 
-![](.\img\6.emp_agro.png)
+![](img/6.emp_agro.png)
 
 Diferente do gráfico com os maior PIB da agropecuária, o estado de MG aparece aqui como segundo maior em quantidade de empregos para este setor, substituindo o RS que é um dos maiores estados em PIB.
 
 
 
-![](.\img\6.des_emp_agro.png)
+![](img/6.des_emp_agro.png)
 
 Quando analisamos os incentivos de financiamento para a agropecuária de MG, percebe-se que foram poucos incentivos começando em 2008, com pico em 2013.
 
@@ -586,23 +586,23 @@ Adicionalmente, alguns gráficos foram plotados para o IDH, eles serão apresent
 
 ***Gráficos de tendência***
 
-![](.\img\idh.png)
+![](img/idh.png)
 
-![](.\img\idh_semfinem.png)
+![](img/idh_semfinem.png)
 
 
 
 ***Série temporal dos estados com maior IDH e os desembolsos para os mesmos***
 
-![](.\img\7.maior_idh.png)
-![](.\img\7.des_maior_idh.png)
+![](img/7.maior_idh.png)
+![](img/7.des_maior_idh.png)
 
 
 
 ***Série temporal dos estados com menor IDH e os desembolsos para os mesmos***
 
-![](.\img\8.menor_idh.png)
-![](.\img\8.des_menor_idh.png)
+![](img/8.menor_idh.png)
+![](img/8.des_menor_idh.png)
 
 
 
@@ -622,7 +622,7 @@ O primeiro ponto a ser explorado foi uma análise bivariada do valor do financia
 
 
 
-![](.\img\processos.png)
+![](img/processos.png)
 
 
 
@@ -632,7 +632,7 @@ A primeira hipótese deste comportamento foi a de que essa tendência pode estar
 
 
 
-![](.\img\processos_segmentos.png)
+![](img/processos_segmentos.png)
 
 
 
@@ -644,7 +644,7 @@ Também plotou-se a relação do número de processos com o prazo de amortizaç�
 
 
 
-![](.\img\processosxamortizacao.png)
+![](img/processosxamortizacao.png)
 
 
 
@@ -680,7 +680,7 @@ Para usar este método, estas variáveis precisam ser normalizadas. Para realiza
 
 Para determinar o número ótimo de Cluster, foi utilizado o método *Elbow*, que retornou um número ótimo de 3 clusters. 
 
-![](.\img\elbow2.png)
+![](img/elbow2.png)
 
 
 
@@ -692,7 +692,7 @@ A clusterização retornou os seguintes grupos:
 
 A relação das variáveis numéricas destes clusters foram plotadas na imagem abaixo.
 
-![](.\img\clusters_adjusted.png)
+![](img/clusters_adjusted.png)
 
 
 
@@ -724,7 +724,7 @@ O repositório do pacote está disponível em: https://github.com/slundberg/shap
 
 Foi utilizado o módulo TreeExplainer para interpretar a saída do modelo. O paper sobre o método está disponível em: https://www.nature.com/articles/s42256-019-0138-9
 
-![](.\img\shap_adjusted.png)
+![](img/shap_adjusted.png)
 
 
 
@@ -740,7 +740,7 @@ Nesta sub-seção serão apresentadas algumas das diferenças de característica
 
 - **Valor do financiamento**
 
-  - ![](.\img\med_fin.jpg)
+  - ![](img/med_fin.jpg)
 
 
 Observa-se que o financiamento médio do grupo 0 é 5 vezes maior do que do grupo 1, e mais de 30 vezes a média do grupo 2.
@@ -751,7 +751,7 @@ Isto indica que temos um grupo de empresas que fazem financiamentos gigantescos,
 
 - **Processos Judiciais**
 
-  - ![](.\img\med_procs.jpg)
+  - ![](img/med_procs.jpg)
 
 
   A média do grupo 0 é muito maior que a dos outros grupos, é particularmente notável a diferença entre o grupo 0 e grupo 1.
@@ -762,7 +762,7 @@ Isto indica que temos um grupo de empresas que fazem financiamentos gigantescos,
 
 - **Prazo de amortização**
 
-  - ![](.\img\med_amort.jpg)
+  - ![](img/med_amort.jpg)
 
 
   A média do prazo de amortização para o grupo 1 é a maior, enquanto a pro grupo 0 é próxima a média do grupo 2.
@@ -773,7 +773,7 @@ Isto indica que temos um grupo de empresas que fazem financiamentos gigantescos,
 
 - **Estados**
 
-  - ![](.\img\estados.jpg)
+  - ![](img/estados.jpg)
 
 
 
@@ -784,7 +784,7 @@ Isto indica que temos um grupo de empresas que fazem financiamentos gigantescos,
 
 
 - **Produtos**
-  - ![](.\img\produtos.jpg)
+  - ![](img/produtos.jpg)
 
 
 
@@ -793,14 +793,14 @@ Nota-se que as empresas do cluster 1, que parece ser o cluster com melhores cond
 
 
 - **Setor BNDES**
-  - ![](.\img\setor.jpg)
+  - ![](img/setor.jpg)
 
 
 
 As empresas do cluster 1 estão mais agregadas no setor de Infraestrutura, enquanto as empresas do cluster 0 parecem estar dispersas entre Infraestrutura e Industria.
 
 - **Garantia**
-- ![](.\img\garantia.jpg)
+- ![](img/garantia.jpg)
 
 
 
