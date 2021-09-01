@@ -12,21 +12,23 @@ O Prêmio Dados Abertos para o Desenvolvimento tem como objetivos:
 
   [Edital do Concurso](https://www.bndes.gov.br/wps/wcm/connect/site/4af22351-97ad-4163-9c6c-15a8406591ed/Edital+Maratona+BNDES+vers%C3%A3o+final.pdf?MOD=AJPERES&CVID=nFujLIl)
   
-  
+
+
+
+# Soluções Entregues
+
+- [Relatório Análise Exploratória](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/Relatorio_analises.md)
+- [Análise de Eficiência e Social Network Analysis](http://rondon.me/team8/)
+- [Relatório Clusterização](https://github.com/Renatochaz/premio-dados-abertos-BNDES/blob/main/relatorio_cluster.md)
+- [Tableau: Visualizações](https://public.tableau.com/app/profile/j.ssica.syrio.callefi)
+
+
 
 # Time 8
 
 Nosso projeto teve como objetivo atuar no pilar da transparência, da efetividade e do impacto na sustentabilidade do país que o banco promove.
 
-- [Pitch](https://www.youtube.com/watch?v=e_A6jZoBxyk)
 
-  
-
-- [Análises e aplicação](http://rondon.me/team8/)
-
-- 
-
-  
 
 ![](img/cidadania.jpg)
 
@@ -63,6 +65,12 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
 
 
 
+**Pitch**
+
+- [Pitch Time 8](https://www.youtube.com/watch?v=e_A6jZoBxyk)
+
+
+
 # Tecnologias utilizadas
 
 - Visualização
@@ -80,7 +88,6 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
   
   - [Dython](http://shakedzy.xyz/dython/)
   
-    
 - Engenharia e análise de dados
   - [Python](https://www.python.org/)
   
@@ -96,7 +103,6 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
   
   - [SciPy](https://www.scipy.org/)
   
-    
 - Machine Learning
   - [Python](https://www.python.org/)
   - [Scikit-learn](https://scikit-learn.org/)
@@ -106,11 +112,6 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
   - [Shap](https://github.com/slundberg/shap)
 
 
-
-# Soluções
-
-- 
-- [Tableau: Visualizações](https://public.tableau.com/app/profile/j.ssica.syrio.callefi)
 
 # Mapa de códigos das análises
 ![](img/codemap.png)
@@ -145,7 +146,7 @@ Rondon de Andrade - https://www.linkedin.com/in/rondon-de-andrade-27a2135/
     
 
 - Social Network Analysis - Relação de sócios para empresas do BNDES
-  - Código: 
+  - [Códigos](https://github.com/Renatochaz/premio-dados-abertos-BNDES/tree/main/social_networks) 
 
     
 
